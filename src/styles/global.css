@@ -770,15 +770,29 @@ button {
   display: grid;
   gap: 0.15rem;
   min-width: 0;
+  flex: 1;
 }
 
-.match-title strong {
+.match-title__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.match-title__head strong {
   font-size: 1rem;
+  min-width: 0;
 }
 
-.match-title span {
+.match-title__summary {
+  margin: 0;
   color: var(--muted);
   font-size: 0.82rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .rating {
@@ -788,14 +802,16 @@ button {
 }
 
 .featured-flag {
-  display: inline-block;
-  margin-left: 0.4rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
   padding: 0.1rem 0.45rem;
   border-radius: 999px;
   background: rgba(110, 176, 255, 0.16);
   color: var(--accent);
   font-size: 0.7rem;
-  vertical-align: middle;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .transfer {
@@ -971,13 +987,6 @@ button {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.match-title span {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .match-more {

@@ -1,8 +1,8 @@
 {
   "player": {
-    "id": 4,
-    "name": "SOONDOOOP",
-    "displayName": "순둡",
+    "id": 7,
+    "name": "Kim Seungdo",
+    "displayName": "김승도",
     "position": "AM (Publisher) / CM (Frontend)",
     "shortPosition": "PUB / FE",
     "seasons": 9,
@@ -15,11 +15,11 @@
   },
   "seasons": [
     {
-      "id": "2017",
-      "label": "2017",
-      "range": "2017",
+      "id": "2017-2018",
+      "label": "2017–2018",
+      "range": "2017 — 2018",
       "role": "Design / Publisher",
-      "club": "Debut Season",
+      "club": "SHINING",
       "scoutNote": "디자인 감각을 바탕으로 한 퍼블리싱 데뷔 시즌. 기본기(HTML/CSS)와 협업 패스가 눈에 띈다.",
       "stats": {
         "finishing": 62,
@@ -41,7 +41,7 @@
       "label": "2018–22",
       "range": "2018 — 2022",
       "role": "Publisher / Frontend",
-      "club": "Growth Arc",
+      "club": "PITAPAT",
       "scoutNote": "퍼블리셔 본업에 AJAX·동적 UI가 더해진 성장 구간. 반응형과 접근성에서 안정적인 출전을 이어감.",
       "stats": {
         "finishing": 78,
@@ -63,8 +63,31 @@
       "id": "2022-2026",
       "label": "2022–26",
       "range": "2022 — 2026",
-      "role": "Publisher · Frontend",
-      "club": "Current Form",
+      "role": "Publisher / Frontend",
+      "club": "IPGROUP",
+      "scoutNote": "컴포넌트 단위 사고와 React 학습이 붙은 현재 폼. 퍼블 디테일은 유지한 채 프론트 영향력을 확장 중.",
+      "stats": {
+        "finishing": 86,
+        "passing": 82,
+        "technique": 88,
+        "vision": 78,
+        "composure": 84,
+        "acceleration": 80,
+        "newGen": 70
+      },
+      "highlights": [
+        "컴포넌트 퍼블",
+        "React 학습·적용",
+        "상태관리·비동기(Redux/Axios) 성장",
+        "성능·유지보수 의식"
+      ]
+    },
+    {
+      "id": "2026 - Current",
+      "label": "2026-Current",
+      "range": "2022 — 2026",
+      "role": "Publisher / Frontend",
+      "club": "FREE AGENT",
       "scoutNote": "컴포넌트 단위 사고와 React 학습이 붙은 현재 폼. 퍼블 디테일은 유지한 채 프론트 영향력을 확장 중.",
       "stats": {
         "finishing": 86,
@@ -241,79 +264,6 @@
         "반응형 퍼블리싱",
         "공통 UI 컴포넌트화",
         "크로스 브라우징 QA"
-      ],
-      "link": null,
-      "status": "sample",
-      "featured": false
-    },
-    {
-      "id": "work-02",
-      "season": "2018–22",
-      "club": "Client / Company",
-      "competition": "Commerce",
-      "role": "Publisher / FE",
-      "title": "커머스 UI 운영",
-      "subtitle": "대표 작업 — 내용을 교체하세요",
-      "rating": 7.9,
-      "stack": [
-        "HTML",
-        "CSS",
-        "jQuery",
-        "AJAX"
-      ],
-      "summary": "목록·상세·프로모션 배너 등 운영 퍼블과 AJAX 연동 구간을 담은 샘플 카드입니다.",
-      "contribution": [
-        "동적 UI 마크업",
-        "AJAX 연동 화면",
-        "이벤트/프로모션 퍼블"
-      ],
-      "link": null,
-      "status": "sample",
-      "featured": false
-    },
-    {
-      "id": "work-03",
-      "season": "2018–22",
-      "club": "Client / Company",
-      "competition": "Admin",
-      "role": "Publisher",
-      "title": "관리자 테이블 UI",
-      "subtitle": "대표 작업 — 내용을 교체하세요",
-      "rating": 7.7,
-      "stack": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ],
-      "summary": "테이블·필터·모달 중심의 어드민 퍼블 샘플입니다. 실제 작업으로 교체하세요.",
-      "contribution": [
-        "데이터 테이블 마크업",
-        "폼·모달 UI",
-        "상태별 화면 분기"
-      ],
-      "link": null,
-      "status": "sample",
-      "featured": false
-    },
-    {
-      "id": "work-04",
-      "season": "2017",
-      "club": "Debut Club",
-      "competition": "Brand",
-      "role": "Design / Publisher",
-      "title": "브랜드 랜딩 퍼블",
-      "subtitle": "대표 작업 — 내용을 교체하세요",
-      "rating": 7.4,
-      "stack": [
-        "Photoshop",
-        "HTML",
-        "CSS"
-      ],
-      "summary": "디자인에서 마크업으로 넘어가던 초기 시즌 샘플 기록입니다.",
-      "contribution": [
-        "시안 기반 마크업",
-        "기본 인터랙션",
-        "디자인 핸드오프"
       ],
       "link": null,
       "status": "sample",

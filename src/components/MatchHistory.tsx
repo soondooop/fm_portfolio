@@ -1,0 +1,185 @@
+import { useEffect, useMemo, useState } from 'react'
+import type { ChangeEvent, KeyboardEvent } from 'react'
+import type { MatchItem } from '../types/projects'
+import MatchModal from './MatchModal'
+
+const PAGE_SIZE = 5
+
+interface MatchHistoryProps {
+  matches: MatchItem[]
+  loading: boolean
+  error: string
+}
+
+export default function MatchHistory({
+  matches,
+  loading,
+  error,
+}: MatchHistoryProps) {
+  const [tag, setTag] = useState('all')
+  const [competition, setCompetition] = useState('all')
+  const [selected, setSelected] = useState<MatchItem | null>(null)
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+
+  const tags = useMemo(() => {
+    const set = new Set<string>()
+    matches.forEach((m) => (m.stack || []).forEach((t) => set.add(t)))
+    return [...set].sort((a, b) => a.localeCompare(b))
+  }, [matches])
+
+  const competitions = useMemo(
+    () => [...new Set(matches.map((m) => m.competition).filter(Boolean))],
+    [matches],
+  )
+
+  const filtered = matches.filter((m) => {
+    const tagOk = tag === 'all' || (m.stack || []).includes(tag)
+    const compOk = competition === 'all' || m.competition === competition
+    return tagOk && compOk
+  })
+
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE)
+  }, [tag, competition, matches])
+
+  const visible = filtered.slice(0, visibleCount)
+  const hasMore = visibleCount < filtered.length
+  const remaining = filtered.length - visibleCount
+
+  return (
+    <section className="panel" aria-labelledby="matches-title">
+      <div className="section-head">
+        <div>
+          <p className="eyebrow">Match History</p>
+          <h2 id="matches-title">출전 기록 · 작업 리스트</h2>
+          <p>
+            GitHub Pages의 프로젝트 데이터를 불러와 보여줍니다. 행을 클릭하면
+            상세 스카우트 노트를 확인할 수 있습니다.
+          </p>
+        </div>
+      </div>
+
+      <div className="filters">
+        <label>
+          <span className="visually-hidden">유형</span>
+          <select
+            value={competition}
+            onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+              setCompetition(e.target.value)
+            }
+            aria-label="유형 필터"
+          >
+            <option value="all">All Types</option>
+            {competitions.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          <span className="visually-hidden">스택</span>
+          <select
+            value={tag}
+            onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+              setTag(e.target.value)
+            }
+            aria-label="스택 필터"
+          >
+            <option value="all">All Stacks</option>
+            {tags.map((t) => (
+              <option key={t} value={t}>
+                {t}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+
+      {loading ? <p className="cd-state">Loading projects…</p> : null}
+      {error ? <p className="cd-error">{error}</p> : null}
+
+      <div className="match-table-wrap">
+        <table className="match-table">
+          <thead>
+            <tr>
+              <th>Match</th>
+              <th>Role</th>
+              <th>Type</th>
+              <th>Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            {!loading &&
+              visible.map((match) => (
+                <tr
+                  key={match.key}
+                  onClick={() => setSelected(match)}
+                  onKeyDown={(e: KeyboardEvent<HTMLTableRowElement>) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setSelected(match)
+                    }
+                  }}
+                  tabIndex={0}
+                >
+                  <td>
+                    <div className="match-cell">
+                      <div className="match-thumb" aria-hidden="true">
+                        {match.image ? (
+                          <img src={match.image} alt="" loading="lazy" />
+                        ) : (
+                          <span className="match-thumb__fallback">CD</span>
+                        )}
+                      </div>
+                      <div className="match-title">
+                        <div className="match-title__head">
+                          <strong>{match.title}</strong>
+                        </div>
+                        <p className="match-title__summary">{match.summary}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>{match.role}</td>
+                  <td>{match.competition}</td>
+                  <td>
+                    <div className="stack-list stack-list--compact">
+                      {(match.stack || []).slice(0, 3).map((tech) => (
+                        <span className="chip" key={tech}>
+                          {tech}
+                        </span>
+                      ))}
+                      {(match.stack || []).length > 3 ? (
+                        <span className="chip">
+                          +{(match.stack || []).length - 3}
+                        </span>
+                      ) : null}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            {!loading && !error && filtered.length === 0 ? (
+              <tr>
+                <td colSpan={4}>해당 조건의 출전 기록이 없습니다.</td>
+              </tr>
+            ) : null}
+          </tbody>
+        </table>
+      </div>
+
+      {!loading && hasMore ? (
+        <div className="match-more">
+          <button
+            type="button"
+            className="btn btn--ghost"
+            onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
+          >
+            더보기 · {remaining}건 남음
+          </button>
+        </div>
+      ) : null}
+
+      <MatchModal match={selected} onClose={() => setSelected(null)} />
+    </section>
+  )
+}

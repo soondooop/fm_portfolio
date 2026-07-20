@@ -19,6 +19,7 @@ npm install
 npm run dev
 ```
 
+TypeScript 기반입니다. `npm run build` 시 `tsc -b` 타입 검사 후 Vite 빌드가 실행됩니다.
 - 포트폴리오: http://localhost:5173
 - Club Desk: http://localhost:5173/club-desk
 - Mock API: http://localhost:3001

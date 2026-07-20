@@ -7,7 +7,7 @@
     "dev": "concurrently -k \"npm:mock\" \"npm:vite\"",
     "vite": "vite",
     "mock": "json-server --port 3001 mock/club-desk/db.json",
-    "build": "vite build",
+    "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },
@@ -26,6 +26,7 @@
     "concurrently": "^10.0.3",
     "json-server": "^1.0.0-beta.15",
     "oxlint": "^1.71.0",
+    "typescript": "^7.0.2",
     "vite": "^8.1.1"
   }
 }
