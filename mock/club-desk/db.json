@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "manager@clubdesk.test",
+      "password": "fm1234",
+      "name": "Touchline Manager",
+      "club": "North Pitch FC"
+    }
+  ],
+  "players": [
+    { "id": 1, "name": "Kim Min-jae", "position": "DF", "age": 28, "rating": 84, "number": 3, "wage": 120000, "status": "available", "nationality": "KR" },
+    { "id": 2, "name": "Lee Jae-sung", "position": "MF", "age": 32, "rating": 78, "number": 8, "wage": 85000, "status": "available", "nationality": "KR" },
+    { "id": 3, "name": "Son Heung-min", "position": "FW", "age": 33, "rating": 88, "number": 7, "wage": 200000, "status": "available", "nationality": "KR" },
+    { "id": 4, "name": "Jo Hyeon-woo", "position": "GK", "age": 34, "rating": 76, "number": 1, "wage": 60000, "status": "available", "nationality": "KR" },
+    { "id": 5, "name": "Hwang Hee-chan", "position": "FW", "age": 29, "rating": 80, "number": 11, "wage": 110000, "status": "injured", "nationality": "KR" },
+    { "id": 6, "name": "Jung Woo-young", "position": "MF", "age": 35, "rating": 74, "number": 5, "wage": 55000, "status": "available", "nationality": "KR" },
+    { "id": 7, "name": "Kim Jin-su", "position": "DF", "age": 33, "rating": 75, "number": 22, "wage": 50000, "status": "loaned", "nationality": "KR" },
+    { "id": 8, "name": "Oh Hyun-gyu", "position": "FW", "age": 24, "rating": 73, "number": 9, "wage": 45000, "status": "available", "nationality": "KR" },
+    { "id": 9, "name": "Park Yong-woo", "position": "MF", "age": 31, "rating": 72, "number": 6, "wage": 40000, "status": "available", "nationality": "KR" },
+    { "id": 10, "name": "Seol Young-woo", "position": "DF", "age": 26, "rating": 77, "number": 2, "wage": 48000, "status": "available", "nationality": "KR" },
+    { "id": 11, "name": "Cho Gue-sung", "position": "FW", "age": 30, "rating": 76, "number": 19, "wage": 70000, "status": "available", "nationality": "KR" },
+    { "id": 12, "name": "Hong Hyun-seok", "position": "MF", "age": 26, "rating": 74, "number": 14, "wage": 42000, "status": "available", "nationality": "KR" },
+    { "id": 13, "name": "Kim Seung-gyu", "position": "GK", "age": 34, "rating": 75, "number": 21, "wage": 52000, "status": "available", "nationality": "KR" },
+    { "id": 14, "name": "Lee Ki-je", "position": "DF", "age": 34, "rating": 73, "number": 13, "wage": 38000, "status": "injured", "nationality": "KR" },
+    { "id": 15, "name": "Bae Jun-ho", "position": "MF", "age": 22, "rating": 71, "number": 17, "wage": 35000, "status": "available", "nationality": "KR" },
+    { "id": 16, "name": "Yang Hyun-jun", "position": "FW", "age": 23, "rating": 72, "number": 18, "wage": 36000, "status": "available", "nationality": "KR" },
+    { "id": 17, "name": "Kim Young-gwon", "position": "DF", "age": 35, "rating": 74, "number": 4, "wage": 58000, "status": "available", "nationality": "KR" },
+    { "id": 18, "name": "Lee Kang-in", "position": "MF", "age": 24, "rating": 82, "number": 10, "wage": 150000, "status": "available", "nationality": "KR" },
+    { "id": 19, "name": "Joo Min-kyu", "position": "FW", "age": 35, "rating": 70, "number": 29, "wage": 30000, "status": "loaned", "nationality": "KR" },
+    { "id": 20, "name": "Kwon Kyung-won", "position": "DF", "age": 33, "rating": 71, "number": 15, "wage": 32000, "status": "available", "nationality": "KR" },
+    { "id": 21, "name": "Song Bum-keun", "position": "GK", "age": 28, "rating": 72, "number": 12, "wage": 34000, "status": "available", "nationality": "KR" },
+    { "id": 22, "name": "Jeong Woo-yeong", "position": "FW", "age": 25, "rating": 73, "number": 16, "wage": 41000, "status": "available", "nationality": "KR" }
+  ],
+  "offers": [
+    { "id": 1, "type": "transfer", "fromClub": "Newcastle", "playerId": 1, "playerName": "Kim Min-jae", "fee": 45000000, "status": "pending", "createdAt": "2026-07-01" },
+    { "id": 2, "type": "contract", "fromClub": "North Pitch FC", "playerId": 3, "playerName": "Son Heung-min", "fee": 0, "status": "pending", "createdAt": "2026-07-02" },
+    { "id": 3, "type": "loan", "fromClub": "Celtic", "playerId": 8, "playerName": "Oh Hyun-gyu", "fee": 2000000, "status": "pending", "createdAt": "2026-07-03" },
+    { "id": 4, "type": "transfer", "fromClub": "PSG", "playerId": 18, "playerName": "Lee Kang-in", "fee": 60000000, "status": "pending", "createdAt": "2026-07-04" },
+    { "id": 5, "type": "transfer", "fromClub": "Wolves", "playerId": 5, "playerName": "Hwang Hee-chan", "fee": 25000000, "status": "rejected", "createdAt": "2026-06-20" },
+    { "id": 6, "type": "contract", "fromClub": "North Pitch FC", "playerId": 2, "playerName": "Lee Jae-sung", "fee": 0, "status": "accepted", "createdAt": "2026-06-15" },
+    { "id": 7, "type": "loan", "fromClub": "Feyenoord", "playerId": 15, "playerName": "Bae Jun-ho", "fee": 500000, "status": "pending", "createdAt": "2026-07-05" },
+    { "id": 8, "type": "transfer", "fromClub": "Mainz", "playerId": 12, "playerName": "Hong Hyun-seok", "fee": 8000000, "status": "pending", "createdAt": "2026-07-06" },
+    { "id": 9, "type": "transfer", "fromClub": "Ulsan", "playerId": 11, "playerName": "Cho Gue-sung", "fee": 5000000, "status": "pending", "createdAt": "2026-07-07" },
+    { "id": 10, "type": "contract", "fromClub": "North Pitch FC", "playerId": 10, "playerName": "Seol Young-woo", "fee": 0, "status": "pending", "createdAt": "2026-07-08" },
+    { "id": 11, "type": "loan", "fromClub": "Gent", "playerId": 16, "playerName": "Yang Hyun-jun", "fee": 750000, "status": "rejected", "createdAt": "2026-06-28" },
+    { "id": 12, "type": "transfer", "fromClub": "Al Nassr", "playerId": 3, "playerName": "Son Heung-min", "fee": 30000000, "status": "pending", "createdAt": "2026-07-09" }
+  ]
+}

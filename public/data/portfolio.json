@@ -1,0 +1,344 @@
+{
+  "player": {
+    "id": 4,
+    "name": "SOONDOOOP",
+    "displayName": "순둡",
+    "position": "AM (Publisher) / CM (Frontend)",
+    "shortPosition": "PUB / FE",
+    "seasons": 9,
+    "club": "Free Agent",
+    "nationality": "KR",
+    "preferredFoot": "Markup · Interaction",
+    "tagline": "마크업의 완성도와 화면 구현력을 겸비한 9시즌차 윙어형 퍼블리셔",
+    "bio": "2017 시즌 디자인/퍼블로 데뷔한 뒤, 프론트엔드 영역까지 포지션을 넓혀 온 웹 퍼블리셔입니다. 시즌별 성장 스탯과 출전 기록(작업물)을 확인한 뒤 영입을 검토해 주세요.",
+    "portrait": "/images/portrait.jpg"
+  },
+  "seasons": [
+    {
+      "id": "2017",
+      "label": "2017",
+      "range": "2017",
+      "role": "Design / Publisher",
+      "club": "Debut Season",
+      "scoutNote": "디자인 감각을 바탕으로 한 퍼블리싱 데뷔 시즌. 기본기(HTML/CSS)와 협업 패스가 눈에 띈다.",
+      "stats": {
+        "finishing": 62,
+        "passing": 58,
+        "technique": 64,
+        "vision": 50,
+        "composure": 55,
+        "acceleration": 60,
+        "newGen": 20
+      },
+      "highlights": [
+        "HTML/CSS 마크업",
+        "디자인 협업",
+        "크로스 브라우징 기초"
+      ]
+    },
+    {
+      "id": "2018-2022",
+      "label": "2018–22",
+      "range": "2018 — 2022",
+      "role": "Publisher / Frontend",
+      "club": "Growth Arc",
+      "scoutNote": "퍼블리셔 본업에 AJAX·동적 UI가 더해진 성장 구간. 반응형과 접근성에서 안정적인 출전을 이어감.",
+      "stats": {
+        "finishing": 78,
+        "passing": 74,
+        "technique": 80,
+        "vision": 68,
+        "composure": 76,
+        "acceleration": 72,
+        "newGen": 45
+      },
+      "highlights": [
+        "반응형·접근성",
+        "jQuery / AJAX",
+        "운영·유지보수 퍼블",
+        "간단한 프론트 로직"
+      ]
+    },
+    {
+      "id": "2022-2026",
+      "label": "2022–26",
+      "range": "2022 — 2026",
+      "role": "Publisher · Frontend",
+      "club": "Current Form",
+      "scoutNote": "컴포넌트 단위 사고와 React 학습이 붙은 현재 폼. 퍼블 디테일은 유지한 채 프론트 영향력을 확장 중.",
+      "stats": {
+        "finishing": 86,
+        "passing": 82,
+        "technique": 88,
+        "vision": 78,
+        "composure": 84,
+        "acceleration": 80,
+        "newGen": 70
+      },
+      "highlights": [
+        "컴포넌트 퍼블",
+        "React 학습·적용",
+        "상태관리·비동기(Redux/Axios) 성장",
+        "성능·유지보수 의식"
+      ]
+    }
+  ],
+  "statLabels": {
+    "finishing": {
+      "name": "Finishing",
+      "desc": "마크업 완성도·디테일"
+    },
+    "passing": {
+      "name": "Passing",
+      "desc": "디자인·백엔드 협업"
+    },
+    "technique": {
+      "name": "Technique",
+      "desc": "CSS·인터랙션·모션"
+    },
+    "vision": {
+      "name": "Vision",
+      "desc": "구조·컴포넌트 설계"
+    },
+    "composure": {
+      "name": "Composure",
+      "desc": "일정·QA·크로스브라우징"
+    },
+    "acceleration": {
+      "name": "Acceleration",
+      "desc": "새 스택 습득 속도"
+    },
+    "newGen": {
+      "name": "New Gen",
+      "desc": "React · Redux · Axios"
+    }
+  },
+  "attributes": {
+    "technical": [
+      {
+        "key": "html",
+        "label": "HTML / Semantic",
+        "value": 90
+      },
+      {
+        "key": "css",
+        "label": "CSS / SCSS",
+        "value": 88
+      },
+      {
+        "key": "a11y",
+        "label": "Accessibility",
+        "value": 82
+      },
+      {
+        "key": "responsive",
+        "label": "Responsive",
+        "value": 90
+      }
+    ],
+    "mental": [
+      {
+        "key": "collab",
+        "label": "Collaboration",
+        "value": 84
+      },
+      {
+        "key": "schedule",
+        "label": "Schedule Sense",
+        "value": 80
+      },
+      {
+        "key": "docs",
+        "label": "Documentation",
+        "value": 76
+      },
+      {
+        "key": "qa",
+        "label": "QA Mindset",
+        "value": 85
+      }
+    ],
+    "delivery": [
+      {
+        "key": "perf",
+        "label": "Performance",
+        "value": 78
+      },
+      {
+        "key": "browser",
+        "label": "Browser Support",
+        "value": 86
+      },
+      {
+        "key": "maintain",
+        "label": "Maintainability",
+        "value": 82
+      }
+    ],
+    "developing": [
+      {
+        "key": "react",
+        "label": "React",
+        "value": 68,
+        "note": "Developing"
+      },
+      {
+        "key": "redux",
+        "label": "Redux Toolkit",
+        "value": 62,
+        "note": "Developing"
+      },
+      {
+        "key": "axios",
+        "label": "Axios / Async",
+        "value": 72,
+        "note": "Developing"
+      }
+    ]
+  },
+  "matches": [
+    {
+      "id": "club-desk",
+      "season": "2022–26",
+      "club": "Personal Project",
+      "competition": "Demo App",
+      "role": "Frontend",
+      "title": "Club Desk",
+      "subtitle": "FM 모티브 구단 운영 어드민",
+      "rating": 8.4,
+      "stack": [
+        "React",
+        "Redux Toolkit",
+        "Axios",
+        "Vite"
+      ],
+      "summary": "스쿼드 CRUD와 이적 제안 Inbox를 React + Redux Toolkit + Axios + json-server로 구현한 구단 운영 어드민.",
+      "contribution": [
+        "목록·검색·필터·페이지네이션",
+        "등록/수정 모달 및 일괄 처리",
+        "인증·토스트·에러 등 어드민 UX"
+      ],
+      "link": "/club-desk",
+      "status": "live",
+      "featured": true
+    },
+    {
+      "id": "work-01",
+      "season": "2022–26",
+      "club": "Client / Company",
+      "competition": "Corporate",
+      "role": "Publisher",
+      "title": "기업 반응형 사이트",
+      "subtitle": "대표 작업 — 내용을 교체하세요",
+      "rating": 8.1,
+      "stack": [
+        "HTML",
+        "SCSS",
+        "JavaScript"
+      ],
+      "summary": "실제 프로젝트명·역할·링크로 교체해 주세요. 시즌·유형 필터 데모용 샘플입니다.",
+      "contribution": [
+        "반응형 퍼블리싱",
+        "공통 UI 컴포넌트화",
+        "크로스 브라우징 QA"
+      ],
+      "link": null,
+      "status": "sample",
+      "featured": false
+    },
+    {
+      "id": "work-02",
+      "season": "2018–22",
+      "club": "Client / Company",
+      "competition": "Commerce",
+      "role": "Publisher / FE",
+      "title": "커머스 UI 운영",
+      "subtitle": "대표 작업 — 내용을 교체하세요",
+      "rating": 7.9,
+      "stack": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "AJAX"
+      ],
+      "summary": "목록·상세·프로모션 배너 등 운영 퍼블과 AJAX 연동 구간을 담은 샘플 카드입니다.",
+      "contribution": [
+        "동적 UI 마크업",
+        "AJAX 연동 화면",
+        "이벤트/프로모션 퍼블"
+      ],
+      "link": null,
+      "status": "sample",
+      "featured": false
+    },
+    {
+      "id": "work-03",
+      "season": "2018–22",
+      "club": "Client / Company",
+      "competition": "Admin",
+      "role": "Publisher",
+      "title": "관리자 테이블 UI",
+      "subtitle": "대표 작업 — 내용을 교체하세요",
+      "rating": 7.7,
+      "stack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "summary": "테이블·필터·모달 중심의 어드민 퍼블 샘플입니다. 실제 작업으로 교체하세요.",
+      "contribution": [
+        "데이터 테이블 마크업",
+        "폼·모달 UI",
+        "상태별 화면 분기"
+      ],
+      "link": null,
+      "status": "sample",
+      "featured": false
+    },
+    {
+      "id": "work-04",
+      "season": "2017",
+      "club": "Debut Club",
+      "competition": "Brand",
+      "role": "Design / Publisher",
+      "title": "브랜드 랜딩 퍼블",
+      "subtitle": "대표 작업 — 내용을 교체하세요",
+      "rating": 7.4,
+      "stack": [
+        "Photoshop",
+        "HTML",
+        "CSS"
+      ],
+      "summary": "디자인에서 마크업으로 넘어가던 초기 시즌 샘플 기록입니다.",
+      "contribution": [
+        "시안 기반 마크업",
+        "기본 인터랙션",
+        "디자인 핸드오프"
+      ],
+      "link": null,
+      "status": "sample",
+      "featured": false
+    }
+  ],
+  "transfer": {
+    "headline": "Would you like to sign this player?",
+    "sub": "영입 제안은 이메일로 전달됩니다. 포지션·근무 형태·관심 스택을 알려주시면 스카우트 미팅을 잡겠습니다.",
+    "email": "hello@example.com",
+    "terms": [
+      "관심 포지션: Publisher / Frontend",
+      "가능 형태: 정규 · 계약 · 프로젝트 (협의)",
+      "강점: 퍼블 디테일 + 협업 커뮤니케이션",
+      "성장 중: React · Redux · Axios"
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/"
+      },
+      {
+        "label": "Resume",
+        "href": "#"
+      }
+    ]
+  }
+}
