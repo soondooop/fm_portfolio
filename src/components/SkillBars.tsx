@@ -1,31 +1,31 @@
-import type { SeasonStats, StatKey, StatLabel } from '../types/portfolio'
+import type { SkillScores, SkillKey, SkillLabel } from '../types/portfolio'
 
-const STAT_ORDER: StatKey[] = [
-  'finishing',
-  'passing',
-  'technique',
-  'vision',
-  'composure',
-  'acceleration',
-  'newGen',
+const SKILL_ORDER: SkillKey[] = [
+  'craft',
+  'collab',
+  'interaction',
+  'structure',
+  'stability',
+  'learning',
+  'modernStack',
 ]
 
-interface StatBarsProps {
-  stats: SeasonStats
-  labels: Record<StatKey, StatLabel>
+interface SkillBarsProps {
+  skills: SkillScores
+  labels: Record<SkillKey, SkillLabel>
   animateKey?: string
 }
 
-export default function StatBars({
-  stats,
+export default function SkillBars({
+  skills,
   labels,
   animateKey = '',
-}: StatBarsProps) {
+}: SkillBarsProps) {
   return (
     <div className="stat-bars" key={animateKey}>
-      {STAT_ORDER.map((key) => {
+      {SKILL_ORDER.map((key) => {
         const meta = labels[key]
-        const value = stats[key] ?? 0
+        const value = skills[key] ?? 0
         return (
           <div className="stat-row" key={key}>
             <div className="stat-row__label">

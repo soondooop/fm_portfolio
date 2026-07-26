@@ -1,49 +1,49 @@
-export type StatKey =
-  | 'finishing'
-  | 'passing'
-  | 'technique'
-  | 'vision'
-  | 'composure'
-  | 'acceleration'
-  | 'newGen'
+export type SkillKey =
+  | 'craft'
+  | 'collab'
+  | 'interaction'
+  | 'structure'
+  | 'stability'
+  | 'learning'
+  | 'modernStack'
 
-export interface PlayerProfile {
+export interface Profile {
   id: number
   name: string
   displayName: string
   position: string
   shortPosition: string
-  seasons: number
-  club: string
-  nationality: string
-  preferredFoot: string
+  years: number
+  status: string
+  based: string
+  focus: string
   tagline: string
   bio: string
   portrait?: string
 }
 
-export interface SeasonStats {
-  finishing: number
-  passing: number
-  technique: number
-  vision: number
-  composure: number
-  acceleration: number
-  newGen: number
+export interface SkillScores {
+  craft: number
+  collab: number
+  interaction: number
+  structure: number
+  stability: number
+  learning: number
+  modernStack: number
 }
 
-export interface Season {
+export interface CareerPeriod {
   id: string
   label: string
   range: string
   role: string
-  club: string
-  scoutNote: string
-  stats: SeasonStats
+  company: string
+  summary: string
+  skills: SkillScores
   highlights: string[]
 }
 
-export interface StatLabel {
+export interface SkillLabel {
   name: string
   desc: string
 }
@@ -58,34 +58,38 @@ export interface AttributeItem {
 export interface AttributesData {
   technical: AttributeItem[]
   mental: AttributeItem[]
+  frontend: AttributeItem[]
+  styling: AttributeItem[]
+  collaboration: AttributeItem[]
   delivery: AttributeItem[]
+  designTools: AttributeItem[]
   developing: AttributeItem[]
 }
 
-export interface TransferLink {
+export interface ContactLink {
   label: string
   href: string
 }
 
-export interface TransferData {
+export interface ContactData {
   headline: string
   sub: string
   email: string
   terms: string[]
-  links: TransferLink[]
+  links: ContactLink[]
 }
 
 export interface PortfolioData {
-  player: PlayerProfile
-  seasons: Season[]
-  statLabels: Record<StatKey, StatLabel>
+  profile: Profile
+  experience: CareerPeriod[]
+  skillLabels: Record<SkillKey, SkillLabel>
   attributes: AttributesData
-  transfer: TransferData
+  contact: ContactData
 }
 
 export type PortfolioTab =
   | 'overview'
   | 'career'
   | 'attributes'
-  | 'matches'
-  | 'transfer'
+  | 'projects'
+  | 'contact'

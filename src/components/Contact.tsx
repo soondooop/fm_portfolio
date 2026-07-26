@@ -1,27 +1,27 @@
 import { useState } from 'react'
 import type { ChangeEvent, FormEvent } from 'react'
-import type { TransferData } from '../types/portfolio'
+import type { ContactData } from '../types/portfolio'
 
-interface TransferForm {
-  club: string
+interface ContactForm {
+  company: string
   role: string
   type: string
   message: string
 }
 
-const INITIAL: TransferForm = {
-  club: '',
+const INITIAL: ContactForm = {
+  company: '',
   role: 'Publisher / Frontend',
   type: '정규직',
   message: '',
 }
 
-interface TransferProps {
-  transfer: TransferData
+interface ContactProps {
+  contact: ContactData
 }
 
-export default function Transfer({ transfer }: TransferProps) {
-  const [form, setForm] = useState<TransferForm>(INITIAL)
+export default function Contact({ contact }: ContactProps) {
+  const [form, setForm] = useState<ContactForm>(INITIAL)
 
   const onChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
@@ -33,35 +33,35 @@ export default function Transfer({ transfer }: TransferProps) {
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const subject = encodeURIComponent(
-      `[영입 제안] ${form.club || 'Club'} → SOONDOOOP`,
+      `[협업 문의] ${form.company || 'Company'} → Kim Seungdo`,
     )
     const body = encodeURIComponent(
       [
-        `구단/회사: ${form.club}`,
-        `희망 포지션: ${form.role}`,
+        `회사/팀: ${form.company}`,
+        `희망 역할: ${form.role}`,
         `근무 형태: ${form.type}`,
         '',
         form.message || '(메시지 없음)',
       ].join('\n'),
     )
-    window.location.href = `mailto:${transfer.email}?subject=${subject}&body=${body}`
+    window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`
   }
 
   return (
-    <section className="panel transfer" aria-labelledby="transfer-title">
+    <section className="panel transfer" aria-labelledby="contact-title">
       <div className="transfer__copy">
-        <p className="eyebrow">Transfer Negotiation</p>
-        <h2 id="transfer-title">{transfer.headline}</h2>
-        <p>{transfer.sub}</p>
+        <p className="eyebrow">Contact & Hire</p>
+        <h2 id="contact-title">{contact.headline}</h2>
+        <p>{contact.sub}</p>
 
         <ul className="terms">
-          {transfer.terms.map((term) => (
+          {contact.terms.map((term) => (
             <li key={term}>{term}</li>
           ))}
         </ul>
 
         <div className="transfer__links">
-          {transfer.links.map((link) => (
+          {contact.links.map((link) => (
             <a
               key={link.label}
               className="btn btn--ghost"
@@ -77,22 +77,22 @@ export default function Transfer({ transfer }: TransferProps) {
 
       <form className="transfer__form form-grid" onSubmit={onSubmit}>
         <p className="eyebrow" style={{ margin: 0 }}>
-          Send Offer
+          Send Inquiry
         </p>
 
         <label>
-          구단 / 회사명
+          회사 / 팀명
           <input
-            name="club"
-            value={form.club}
+            name="company"
+            value={form.company}
             onChange={onChange}
-            placeholder="예: North Pitch FC"
+            placeholder="예: Example Studio"
             required
           />
         </label>
 
         <label>
-          희망 포지션
+          희망 역할
           <select name="role" value={form.role} onChange={onChange}>
             <option>Publisher / Frontend</option>
             <option>Publisher</option>
@@ -116,12 +116,12 @@ export default function Transfer({ transfer }: TransferProps) {
             name="message"
             value={form.message}
             onChange={onChange}
-            placeholder="영입 배경, 팀 구성, 관심 스택 등을 적어 주세요."
+            placeholder="채용 배경, 팀 구성, 관심 스택 등을 적어 주세요."
           />
         </label>
 
         <button type="submit" className="btn btn--primary">
-          영입 제안 보내기
+          제안 보내기
         </button>
       </form>
     </section>

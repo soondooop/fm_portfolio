@@ -1,82 +1,70 @@
-import type { PlayerProfile, PortfolioTab } from '../types/portfolio'
+import { Link } from 'react-router-dom'
+import type { Profile } from '../types/portfolio'
 
 interface OverviewProps {
-  player: PlayerProfile
-  onNavigate: (tab: PortfolioTab) => void
+  profile: Profile
 }
 
-export default function Overview({ player, onNavigate }: OverviewProps) {
-  const currentAbility = 84
+export default function Overview({ profile }: OverviewProps) {
+  const overall = 92
 
   return (
     <section className="panel hero" aria-labelledby="overview-title">
       <div className="hero__copy">
-        <p className="eyebrow">Scout Report · Free Agent</p>
+        <p className="eyebrow">Talent Profile · Open to Work</p>
         <div className="hero__jersey" aria-hidden="true">
-          #{player.id}
+          #{profile.id}
         </div>
-        <h1 id="overview-title">{player.name}</h1>
-        <p className="hero__position">{player.position}</p>
-        <p className="hero__tagline">{player.tagline}</p>
+        <h1 id="overview-title">{profile.name}</h1>
+        <p className="hero__position">{profile.position}</p>
+        <p className="hero__tagline">{profile.tagline}</p>
 
         <div className="hero__meta">
           <span className="chip">
-            Seasons <strong>{player.seasons}</strong>
+            Exp <strong>{profile.years}years</strong>
           </span>
           <span className="chip">
-            Club <strong>{player.club}</strong>
+            Status <strong>{profile.status}</strong>
           </span>
           <span className="chip">
-            NAT <strong>{player.nationality}</strong>
+            Based <strong>{profile.based}</strong>
           </span>
           <span className="chip">
-            Style <strong>{player.preferredFoot}</strong>
+            Focus <strong>{profile.focus}</strong>
           </span>
         </div>
 
         <div className="hero__actions">
-          <button
-            type="button"
-            className="btn btn--primary"
-            onClick={() => onNavigate('transfer')}
-          >
-            영입하시겠습니까?
-          </button>
-          <button
-            type="button"
-            className="btn btn--ghost"
-            onClick={() => onNavigate('matches')}
-          >
-            출전 기록 보기
-          </button>
-          <button
-            type="button"
-            className="btn btn--ghost"
-            onClick={() => onNavigate('career')}
-          >
-            시즌 스탯
-          </button>
+          <Link className="btn btn--primary" to="/contact">
+            제안하기
+          </Link>
+          <Link className="btn btn--ghost" to="/projects">
+            프로젝트 보기
+          </Link>
+          <Link className="btn btn--ghost" to="/experience">
+            경력 역량
+          </Link>
         </div>
       </div>
 
-      <aside className="player-card" aria-label="선수 카드">
+      <aside className="player-card" aria-label="프로필 카드">
         <div className="player-card__head">
           <div className="player-card__top">
             <div>
-              <div className="player-card__club">{player.club}</div>
+              <div className="player-card__club">{profile.status}</div>
               <h2 className="player-card__name">
-                {player.displayName || player.name}
+                {profile.displayName || profile.name}
               </h2>
-              <p className="player-card__role">{player.shortPosition}</p>
+              <p className="player-card__role">{profile.shortPosition}</p>
             </div>
-            <div className="player-card__badge">{player.id}</div>
+            <div className="player-card__badge">{profile.id}</div>
           </div>
 
-          {player.portrait ? (
+          {profile.portrait ? (
             <div className="player-card__photo">
               <img
-                src={player.portrait}
-                alt={`${player.displayName || player.name} 증명사진`}
+                src={profile.portrait}
+                alt={`${profile.displayName || profile.name} 프로필 사진`}
               />
             </div>
           ) : null}
@@ -84,15 +72,15 @@ export default function Overview({ player, onNavigate }: OverviewProps) {
 
         <div className="player-card__stats">
           <div className="player-card__stat">
-            <span>CA</span>
-            <strong>{currentAbility}</strong>
+            <span>Overall</span>
+            <strong>{overall}</strong>
           </div>
           <div className="player-card__stat">
-            <span>Seasons</span>
-            <strong>{player.seasons}</strong>
+            <span>Years</span>
+            <strong>{profile.years}</strong>
           </div>
           <div className="player-card__stat">
-            <span>Debut</span>
+            <span>Since</span>
             <strong>2017</strong>
           </div>
         </div>

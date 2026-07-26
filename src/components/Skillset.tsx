@@ -1,31 +1,32 @@
 import type { AttributesData } from '../types/portfolio'
 
-interface AttributeGroup {
+interface SkillsetGroup {
   key: keyof AttributesData
   title: string
 }
 
-const GROUPS: AttributeGroup[] = [
-  { key: 'technical', title: 'Technical' },
-  { key: 'mental', title: 'Mental' },
+const GROUPS: SkillsetGroup[] = [
+  { key: 'frontend', title: 'Frontend' },
+  { key: 'styling', title: 'Styling' },
+  { key: 'designTools', title: 'Design & Tools' },
+  { key: 'collaboration', title: 'Collaboration' },
   { key: 'delivery', title: 'Delivery' },
-  { key: 'developing', title: 'New Gen · Developing' },
+  { key: 'developing', title: 'Modern Stack' },
 ]
 
-interface AttributesProps {
+interface SkillsetProps {
   attributes: AttributesData
 }
 
-export default function Attributes({ attributes }: AttributesProps) {
+export default function Skillset({ attributes }: SkillsetProps) {
   return (
     <section className="panel" aria-labelledby="attributes-title">
       <div className="section-head">
         <div>
-          <p className="eyebrow">Current Attributes</p>
-          <h2 id="attributes-title">현재 능력치</h2>
+          <p className="eyebrow">Skill Set</p>
+          <h2 id="attributes-title">현재 스킬셋</h2>
           <p>
-            퍼블리싱 강점은 높게, React 계열은 Developing으로 솔직하게
-            표기했습니다. 영입 후 성장 여지를 함께 보세요.
+            디자인, 퍼블리싱부터 시작해 프론트엔드 개발까지 다양한 경험을 통해 성장하고 있습니다.
           </p>
         </div>
       </div>

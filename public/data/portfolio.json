@@ -1,293 +1,347 @@
 {
-  "player": {
-    "id": 7,
+  "profile": {
+    "id": 92,
     "name": "Kim Seungdo",
     "displayName": "김승도",
-    "position": "AM (Publisher) / CM (Frontend)",
-    "shortPosition": "PUB / FE",
-    "seasons": 9,
-    "club": "Free Agent",
-    "nationality": "KR",
-    "preferredFoot": "Markup · Interaction",
-    "tagline": "마크업의 완성도와 화면 구현력을 겸비한 9시즌차 윙어형 퍼블리셔",
-    "bio": "2017 시즌 디자인/퍼블로 데뷔한 뒤, 프론트엔드 영역까지 포지션을 넓혀 온 웹 퍼블리셔입니다. 시즌별 성장 스탯과 출전 기록(작업물)을 확인한 뒤 영입을 검토해 주세요.",
+    "position": "Publisher / Frontend",
+    "shortPosition": "PUBLISHER / FRONTEND",
+    "years": 9,
+    "status": "Open to Work",
+    "based": "Korea",
+    "focus": "Markup · Interaction · Development",
+    "tagline": "탄탄한 퍼블리싱 기본기에 개발 역량을 키워 프론트엔드 경쟁력을 더한 김승도입니다.",
+    "bio": "2017년 디자인/퍼블로 커리어를 시작한 뒤, 프론트엔드 영역까지 역할을 넓혀 온 웹 퍼블리셔 · 프론트엔드입니다. ",
     "portrait": "/images/portrait.jpg"
   },
-  "seasons": [
+  "experience": [
     {
       "id": "2017-2018",
       "label": "2017–2018",
       "range": "2017 — 2018",
       "role": "Design / Publisher",
-      "club": "SHINING",
-      "scoutNote": "디자인 감각을 바탕으로 한 퍼블리싱 데뷔 시즌. 기본기(HTML/CSS)와 협업 패스가 눈에 띈다.",
-      "stats": {
-        "finishing": 62,
-        "passing": 58,
-        "technique": 64,
-        "vision": 50,
-        "composure": 55,
-        "acceleration": 60,
-        "newGen": 20
+      "company": "SHINING",
+      "summary": "디자인 감각을 바탕으로 한 퍼블리싱 입문 구간. 그누보드 php 기반 홈페이지 템플릿 디자인 및 퍼블리싱 작업. 고객과 1:1 대응으로 유즈케이스 작성 및 홈페이지 제작. javascript와 css animation을 이용한 간단한 모션 적용. php 개발자와의 협업으로 기능 구현.",
+      "skills": {
+        "craft": 62,
+        "collab": 58,
+        "interaction": 64,
+        "structure": 50,
+        "stability": 55,
+        "learning": 40,
+        "modernStack": 5
       },
       "highlights": [
+        "Photoshop / Illustrator",
         "HTML/CSS 마크업",
-        "디자인 협업",
-        "크로스 브라우징 기초"
+        "템플릿 디자인 및 퍼블리싱",
+        "크로스 브라우징 기초",
+        "그누보드/PHP"
       ]
     },
     {
       "id": "2018-2022",
-      "label": "2018–22",
+      "label": "2018–2022",
       "range": "2018 — 2022",
       "role": "Publisher / Frontend",
-      "club": "PITAPAT",
-      "scoutNote": "퍼블리셔 본업에 AJAX·동적 UI가 더해진 성장 구간. 반응형과 접근성에서 안정적인 출전을 이어감.",
-      "stats": {
-        "finishing": 78,
-        "passing": 74,
-        "technique": 80,
-        "vision": 68,
-        "composure": 76,
-        "acceleration": 72,
-        "newGen": 45
+      "company": "PITAPAT",
+      "summary": "javascript, jQuery, AJAX·동적 UI가 더해진 성장 구간. \n디자이너 및 개발자와의 협업을 통한 공공기관·호텔·대기업 웹사이트 구축/리뉴얼/운영 및 인터랙티브 이벤트 페이지, 하이브리드 앱 제작",
+      "skills": {
+        "craft": 78,
+        "collab": 88,
+        "interaction": 88,
+        "structure": 68,
+        "stability": 88,
+        "learning": 72,
+        "modernStack": 30
       },
       "highlights": [
+        "Adobe XD / Photoshop / Figma",
         "반응형·접근성",
-        "jQuery / AJAX",
         "운영·유지보수 퍼블",
-        "간단한 프론트 로직"
+        "매쉬업",
+        "jQuery / AJAX",
+        "RESTful API 연동",
+        "chart js",
+        "GSAP",
+        "WordPress",
+        "기능 구현 및 프론트 로직"
       ]
     },
     {
       "id": "2022-2026",
-      "label": "2022–26",
+      "label": "2022–2026",
       "range": "2022 — 2026",
       "role": "Publisher / Frontend",
-      "club": "IPGROUP",
-      "scoutNote": "컴포넌트 단위 사고와 React 학습이 붙은 현재 폼. 퍼블 디테일은 유지한 채 프론트 영향력을 확장 중.",
-      "stats": {
-        "finishing": 86,
-        "passing": 82,
-        "technique": 88,
-        "vision": 78,
-        "composure": 84,
-        "acceleration": 80,
-        "newGen": 70
+      "company": "IPGROUP",
+      "summary": "롯데면세점 유지보수 및 운영. 제휴, 이벤트, 상품 페이지 인터렉티브 모션 및 상품 API 작업. 피그마, 어도비xd, 포토샵 기반 디자인 퍼블리싱 작업. 기존 운영 페이지 고도화 작업.",
+      "skills": {
+        "craft": 86,
+        "collab": 89,
+        "interaction": 88,
+        "structure": 78,
+        "stability": 90,
+        "learning": 75,
+        "modernStack": 40
       },
       "highlights": [
-        "컴포넌트 퍼블",
-        "React 학습·적용",
-        "상태관리·비동기(Redux/Axios) 성장",
+        "Adobe XD / Photoshop / Figma",
+        "반응형·접근성",
+        "운영·유지보수 퍼블",
+        "jQuery / AJAX",
+        "GSAP",
+        "Cursor Ai",
         "성능·유지보수 의식"
       ]
     },
     {
       "id": "2026 - Current",
       "label": "2026-Current",
-      "range": "2022 — 2026",
+      "range": "2026 — Current",
       "role": "Publisher / Frontend",
-      "club": "FREE AGENT",
-      "scoutNote": "컴포넌트 단위 사고와 React 학습이 붙은 현재 폼. 퍼블 디테일은 유지한 채 프론트 영향력을 확장 중.",
-      "stats": {
-        "finishing": 86,
-        "passing": 82,
-        "technique": 88,
-        "vision": 78,
-        "composure": 84,
-        "acceleration": 80,
-        "newGen": 70
+      "company": "Open to Work",
+      "summary": "현재 Open to Work 상태. 퍼블리싱 강점을 기반으로 React·상태관리·비동기 역량을 실무에 더 깊게 연결하려 합니다.",
+      "skills": {
+        "craft": 97,
+        "collab": 90,
+        "interaction": 90,
+        "structure": 85,
+        "stability": 92,
+        "learning": 80,
+        "modernStack": 60
       },
       "highlights": [
-        "컴포넌트 퍼블",
-        "React 학습·적용",
-        "상태관리·비동기(Redux/Axios) 성장",
-        "성능·유지보수 의식"
+        "React · Next.js",
+        "Redux · Axios",
+        "typescript",
+        "Cursor Ai",
+        "JAVA · C언어 · SQL · Python 기초",
+        "정보처리기사 취득중"
       ]
     }
   ],
-  "statLabels": {
-    "finishing": {
-      "name": "Finishing",
+  "skillLabels": {
+    "craft": {
+      "name": "Craft",
       "desc": "마크업 완성도·디테일"
     },
-    "passing": {
-      "name": "Passing",
+    "collab": {
+      "name": "Collab",
       "desc": "디자인·백엔드 협업"
     },
-    "technique": {
-      "name": "Technique",
+    "interaction": {
+      "name": "Interaction",
       "desc": "CSS·인터랙션·모션"
     },
-    "vision": {
-      "name": "Vision",
+    "structure": {
+      "name": "Structure",
       "desc": "구조·컴포넌트 설계"
     },
-    "composure": {
-      "name": "Composure",
+    "stability": {
+      "name": "Stability",
       "desc": "일정·QA·크로스브라우징"
     },
-    "acceleration": {
-      "name": "Acceleration",
-      "desc": "새 스택 습득 속도"
+    "learning": {
+      "name": "Learning",
+      "desc": "새로운 정보 습득력"
     },
-    "newGen": {
-      "name": "New Gen",
+    "modernStack": {
+      "name": "Modern Stack",
       "desc": "React · Redux · Axios"
     }
   },
   "attributes": {
-    "technical": [
+    "frontend": [
       {
         "key": "html",
         "label": "HTML / Semantic",
-        "value": 90
-      },
-      {
-        "key": "css",
-        "label": "CSS / SCSS",
-        "value": 88
+        "value": 97
       },
       {
         "key": "a11y",
-        "label": "Accessibility",
-        "value": 82
+        "label": "접근성",
+        "value": 95
       },
       {
         "key": "responsive",
-        "label": "Responsive",
+        "label": "반응형",
+        "value": 97
+      },
+      {
+        "key": "javascript",
+        "label": "javascript",
+        "value": 90
+      },
+      {
+        "key": "jquery",
+        "label": "jQuery",
+        "value": 95
+      },
+      {
+        "key": "GSAP",
+        "label": "GSAP",
         "value": 90
       }
     ],
-    "mental": [
+    "styling": [
+      {
+        "key": "css",
+        "label": "CSS3",
+        "value": 97
+      },
+      {
+        "key": "SASS/SCSS",
+        "label": "SASS/SCSS",
+        "value": 70
+      },
+      {
+        "key": "Tailwind CSS",
+        "label": "Tailwind CSS",
+        "value": 55
+      },
+      {
+        "key": "Styled Components",
+        "label": "Styled Components",
+        "value": 40
+      },
+      {
+        "key": "CSS Modules",
+        "label": "CSS Modules",
+        "value": 30
+      }
+    ],
+    "designTools": [
+      {
+        "key": "Figma",
+        "label": "Figma",
+        "value": 50
+      },
+      {
+        "key": "Adobe XD",
+        "label": "Adobe XD",
+        "value": 70
+      },
+      {
+        "key": "Photoshop",
+        "label": "Photoshop",
+        "value": 90
+      },
+      {
+        "key": "Illustrator",
+        "label": "Illustrator",
+        "value": 70
+      },
+      {
+        "key": "Github",
+        "label": "Github",
+        "value": 70
+      },
+      {
+        "key": "Cursor AI",
+        "label": "Cursor AI",
+        "value": 80
+      }
+    ],
+    "collaboration": [
+      {
+        "key": "git",
+        "label": "git",
+        "value": 70
+      },
       {
         "key": "collab",
-        "label": "Collaboration",
-        "value": 84
+        "label": "협업 능력",
+        "value": 90
       },
       {
         "key": "schedule",
-        "label": "Schedule Sense",
-        "value": 80
+        "label": "일정 관리",
+        "value": 92
       },
       {
         "key": "docs",
-        "label": "Documentation",
+        "label": "문서화",
         "value": 76
       },
       {
         "key": "qa",
-        "label": "QA Mindset",
+        "label": "품질 관리",
         "value": 85
       }
     ],
     "delivery": [
       {
         "key": "perf",
-        "label": "Performance",
-        "value": 78
+        "label": "성능 관리",
+        "value": 90
       },
       {
         "key": "browser",
-        "label": "Browser Support",
-        "value": 86
+        "label": "크로스 브라우징",
+        "value": 97
       },
       {
         "key": "maintain",
-        "label": "Maintainability",
-        "value": 82
+        "label": "유지보수",
+        "value": 97
       }
     ],
     "developing": [
       {
+        "key": "Next.js",
+        "label": "Next.js",
+        "value": 32,
+        "note": "성장 중"
+      },
+      {
+        "key": "vue.js",
+        "label": "Vue.js",
+        "value": 30,
+        "note": "성장 중"
+      },
+      {
         "key": "react",
         "label": "React",
         "value": 68,
-        "note": "Developing"
+        "note": "성장 중"
+      },
+      {
+        "key": "Typescript",
+        "label": "Typescript",
+        "value": 70,
+        "note": "성장 중"
       },
       {
         "key": "redux",
         "label": "Redux Toolkit",
         "value": 62,
-        "note": "Developing"
+        "note": "성장 중"
       },
       {
         "key": "axios",
         "label": "Axios / Async",
-        "value": 72,
-        "note": "Developing"
+        "value": 62,
+        "note": "성장 중"
       }
     ]
   },
-  "matches": [
-    {
-      "id": "club-desk",
-      "season": "2022–26",
-      "club": "Personal Project",
-      "competition": "Demo App",
-      "role": "Frontend",
-      "title": "Club Desk",
-      "subtitle": "FM 모티브 구단 운영 어드민",
-      "rating": 8.4,
-      "stack": [
-        "React",
-        "Redux Toolkit",
-        "Axios",
-        "Vite"
-      ],
-      "summary": "스쿼드 CRUD와 이적 제안 Inbox를 React + Redux Toolkit + Axios + json-server로 구현한 구단 운영 어드민.",
-      "contribution": [
-        "목록·검색·필터·페이지네이션",
-        "등록/수정 모달 및 일괄 처리",
-        "인증·토스트·에러 등 어드민 UX"
-      ],
-      "link": "/club-desk",
-      "status": "live",
-      "featured": true
-    },
-    {
-      "id": "work-01",
-      "season": "2022–26",
-      "club": "Client / Company",
-      "competition": "Corporate",
-      "role": "Publisher",
-      "title": "기업 반응형 사이트",
-      "subtitle": "대표 작업 — 내용을 교체하세요",
-      "rating": 8.1,
-      "stack": [
-        "HTML",
-        "SCSS",
-        "JavaScript"
-      ],
-      "summary": "실제 프로젝트명·역할·링크로 교체해 주세요. 시즌·유형 필터 데모용 샘플입니다.",
-      "contribution": [
-        "반응형 퍼블리싱",
-        "공통 UI 컴포넌트화",
-        "크로스 브라우징 QA"
-      ],
-      "link": null,
-      "status": "sample",
-      "featured": false
-    }
-  ],
-  "transfer": {
-    "headline": "Would you like to sign this player?",
-    "sub": "영입 제안은 이메일로 전달됩니다. 포지션·근무 형태·관심 스택을 알려주시면 스카우트 미팅을 잡겠습니다.",
-    "email": "hello@example.com",
+  "contact": {
+    "headline": "함께 일해요!",
+    "sub": "채용·협업 문의는 이메일로 전달됩니다. 희망 역할·근무 형태·관심 스택을 알려주세요!",
+    "email": "tmdehk02@gmail.com",
     "terms": [
-      "관심 포지션: Publisher / Frontend",
-      "가능 형태: 정규 · 계약 · 프로젝트 (협의)",
-      "강점: 퍼블 디테일 + 협업 커뮤니케이션",
+      "관심 역할: Publisher / Frontend",
+      "가능 형태: 정규 · 장기 계약",
+      "강점: 퍼블 디테일 + 협업 커뮤니케이션 + 프론트엔드 개발 역량",
       "성장 중: React · Redux · Axios"
     ],
     "links": [
       {
         "label": "GitHub",
-        "href": "https://github.com/"
+        "href": "https://github.com/soondooop/"
       },
       {
-        "label": "Resume",
-        "href": "#"
+        "label": "Instagram",
+        "href": "https://www.instagram.com/soondooop/"
       }
     ]
   }

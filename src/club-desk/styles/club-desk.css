@@ -1,19 +1,9 @@
 .cd-shell {
-  --cd-ink: #0a101c;
-  --cd-panel: #152238;
-  --cd-line: rgba(160, 196, 240, 0.16);
-  --cd-text: #e6eef8;
-  --cd-muted: #93a4bc;
-  --cd-accent: #6eb0ff;
-  --cd-danger: #ef7b6a;
-  --cd-warn: #f0c36a;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 220px 1fr;
   color: var(--cd-text);
-  background:
-    radial-gradient(900px 420px at 100% 0%, rgba(110, 176, 255, 0.12), transparent 55%),
-    linear-gradient(160deg, #0a101c, #121c32 50%, #0d1524);
+  background: var(--cd-shell-bg);
   font-family: 'Figtree', 'Segoe UI', sans-serif;
 }
 
@@ -23,7 +13,7 @@
   height: 100vh;
   padding: 1.25rem 1rem;
   border-right: 1px solid var(--cd-line);
-  background: rgba(10, 16, 28, 0.78);
+  background: var(--cd-nav-bg);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;

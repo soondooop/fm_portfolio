@@ -33,8 +33,8 @@ export default function DeskLayout() {
           >
             Logout
           </button>
-          <Link className="cd-back-link" to="/">
-            ← Scout Report
+          <Link className="cd-back-link" to="/overview">
+            ← Talent Profile
           </Link>
         </div>
       </aside>

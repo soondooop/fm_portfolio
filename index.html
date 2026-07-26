@@ -6,15 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="SOONDOOOP ? Football Manager ??? ? ???? / ????? ?????"
+      content="Kim Seungdo — 웹 퍼블리셔 / 프론트엔드 포트폴리오"
     />
+    <script>
+      (function () {
+        try {
+          var key = 'fm-portfolio-theme'
+          var pref = localStorage.getItem(key) || 'system'
+          var light = window.matchMedia('(prefers-color-scheme: light)').matches
+          var theme =
+            pref === 'light' || pref === 'dark'
+              ? pref
+              : light
+                ? 'light'
+                : 'dark'
+          document.documentElement.dataset.theme = theme
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark'
+        }
+      })()
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=Figtree:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>SOONDOOOP ? Scout Report</title>
+    <title>Kim Seungdo — Talent Profile</title>
   </head>
   <body>
     <div id="root"></div>

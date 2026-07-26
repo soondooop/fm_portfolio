@@ -1,11 +1,11 @@
 # SOONDOOOP — FM Style Portfolio + Club Desk
 
-Football Manager 모티브 포트폴리오와, React + Redux Toolkit + Axios 데모 앱 **Club Desk**를 포함한 프로젝트입니다.
+Football Manager식 UI 골격을 쓰되, 카피는 IT·커리어 톤으로 맞춘 포트폴리오와 React + Redux Toolkit + Axios 데모 앱 **Club Desk**를 포함한 프로젝트입니다.
 
 ## 구성
 
-### Scout Report (`/`)
-- Overview / Career / Attributes / Match History / Transfer
+### Talent Profile (`/`)
+- Overview / Experience / Skills / Projects / Contact
 
 ### Club Desk (`/club-desk`)
 - Login (데모 계정)

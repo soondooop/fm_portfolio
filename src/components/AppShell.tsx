@@ -1,42 +1,23 @@
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import type { ReactNode } from 'react'
-import type { PortfolioTab } from '../types/portfolio'
-
-interface NavItem {
-  id: PortfolioTab
-  label: string
-  index: string
-}
-
-const NAV: NavItem[] = [
-  { id: 'overview', label: 'Overview', index: '01' },
-  { id: 'career', label: 'Career', index: '02' },
-  { id: 'attributes', label: 'Attributes', index: '03' },
-  { id: 'matches', label: 'Match History', index: '04' },
-  { id: 'transfer', label: 'Transfer', index: '05' },
-]
+import ThemeToggle from '../theme/ThemeToggle'
+import { PORTFOLIO_ROUTES } from '../types/routes'
 
 interface AppShellProps {
-  active: PortfolioTab
-  onNavigate: (tab: PortfolioTab) => void
   children: ReactNode
 }
 
-export default function AppShell({ active, onNavigate, children }: AppShellProps) {
+export default function AppShell({ children }: AppShellProps) {
   const [open, setOpen] = useState(false)
-
-  const handleNav = (id: PortfolioTab) => {
-    onNavigate(id)
-    setOpen(false)
-  }
 
   return (
     <div className="shell">
       <aside className={`shell__nav ${open ? 'is-open' : ''}`}>
         <div className="brand-row">
           <div className="brand">
-            <span className="brand__mark">Club Desk</span>
-            <span className="brand__name">Scout UI</span>
+            <span className="brand__mark">Portfolio Desk</span>
+            <span className="brand__name">Kim Seungdo</span>
           </div>
           <button
             type="button"
@@ -49,24 +30,28 @@ export default function AppShell({ active, onNavigate, children }: AppShellProps
         </div>
 
         <ul className="nav-list">
-          {NAV.map((item) => (
+          {PORTFOLIO_ROUTES.map((item) => (
             <li key={item.id}>
-              <button
-                type="button"
-                aria-current={active === item.id ? 'page' : undefined}
-                onClick={() => handleNav(item.id)}
+              <NavLink
+                to={item.path}
+                end
+                className={({ isActive }) => (isActive ? 'active' : undefined)}
+                onClick={() => setOpen(false)}
               >
                 <span className="nav-list__index">{item.index}</span>
-                {item.label}
-              </button>
+                <span>{item.label}</span>
+              </NavLink>
             </li>
           ))}
         </ul>
 
-        <div className="shell__nav-foot">
-          9 seasons · Publisher / Frontend
-          <br />
-          Would you sign?
+        <div className="shell__nav-bottom">
+          <ThemeToggle />
+          <div className="shell__nav-foot">
+            9 years · Publisher / Frontend
+            <br />
+            Open to work
+          </div>
         </div>
       </aside>
 

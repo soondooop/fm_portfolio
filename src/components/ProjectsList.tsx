@@ -1,21 +1,21 @@
-import { useEffect, useMemo, useState } from 'react'
+﻿import { useEffect, useMemo, useState } from 'react'
 import type { ChangeEvent, KeyboardEvent } from 'react'
 import type { MatchItem } from '../types/projects'
-import MatchModal from './MatchModal'
+import ProjectsModal from './ProjectsModal'
 
 const PAGE_SIZE = 5
 
-interface MatchHistoryProps {
+interface ProjectsListProps {
   matches: MatchItem[]
   loading: boolean
   error: string
 }
 
-export default function MatchHistory({
+export default function ProjectsList({
   matches,
   loading,
   error,
-}: MatchHistoryProps) {
+}: ProjectsListProps) {
   const [tag, setTag] = useState('all')
   const [competition, setCompetition] = useState('all')
   const [selected, setSelected] = useState<MatchItem | null>(null)
@@ -50,11 +50,10 @@ export default function MatchHistory({
     <section className="panel" aria-labelledby="matches-title">
       <div className="section-head">
         <div>
-          <p className="eyebrow">Match History</p>
-          <h2 id="matches-title">출전 기록 · 작업 리스트</h2>
+          <p className="eyebrow">Project Log</p>
+          <h2 id="matches-title">프로젝트 리스트</h2>
           <p>
-            GitHub Pages의 프로젝트 데이터를 불러와 보여줍니다. 행을 클릭하면
-            상세 스카우트 노트를 확인할 수 있습니다.
+            작업해왔던 프로젝트들을 한눈에 확인할 수 있습니다. 
           </p>
         </div>
       </div>
@@ -103,7 +102,7 @@ export default function MatchHistory({
         <table className="match-table">
           <thead>
             <tr>
-              <th>Match</th>
+              <th>Project</th>
               <th>Role</th>
               <th>Type</th>
               <th>Stack</th>
@@ -149,9 +148,9 @@ export default function MatchHistory({
                           {tech}
                         </span>
                       ))}
-                      {(match.stack || []).length > 3 ? (
+                      {(match.stack || []).length > 5 ? (
                         <span className="chip">
-                          +{(match.stack || []).length - 3}
+                          +{(match.stack || []).length - 5}
                         </span>
                       ) : null}
                     </div>
@@ -160,7 +159,7 @@ export default function MatchHistory({
               ))}
             {!loading && !error && filtered.length === 0 ? (
               <tr>
-                <td colSpan={4}>해당 조건의 출전 기록이 없습니다.</td>
+                <td colSpan={4}>해당 조건의 프로젝트가 없습니다.</td>
               </tr>
             ) : null}
           </tbody>
@@ -179,7 +178,7 @@ export default function MatchHistory({
         </div>
       ) : null}
 
-      <MatchModal match={selected} onClose={() => setSelected(null)} />
+      <ProjectsModal match={selected} onClose={() => setSelected(null)} />
     </section>
   )
 }

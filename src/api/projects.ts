@@ -8,7 +8,7 @@ const CLUB_DESK: MatchItem = {
   id: 'club-desk',
   title: 'Club Desk',
   summary:
-    '스쿼드 CRUD와 이적 제안 Inbox를 React + Redux Toolkit + Axios로 구현한 구단 운영 어드민.',
+    '목록 CRUD와 제안 Inbox를 React + Redux Toolkit + Axios로 구현한 관리자형 데모 앱.',
   image: null,
   stack: ['React', 'Redux Toolkit', 'Axios', 'Vite'],
   link: '/club-desk',

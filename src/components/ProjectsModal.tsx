@@ -4,12 +4,12 @@ import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
 import type { MatchItem } from '../types/projects'
 
-interface MatchModalProps {
+interface ProjectsModalProps {
   match: MatchItem | null
   onClose: () => void
 }
 
-export default function MatchModal({ match, onClose }: MatchModalProps) {
+export default function ProjectsModal({ match, onClose }: ProjectsModalProps) {
   useEffect(() => {
     if (!match) return undefined
 
@@ -85,7 +85,7 @@ export default function MatchModal({ match, onClose }: MatchModalProps) {
 
         {contribution.length ? (
           <>
-            <p className="eyebrow">Contribution</p>
+            <p className="eyebrow">What I did</p>
             <ul>
               {contribution.map((item) => (
                 <li key={item}>{item}</li>

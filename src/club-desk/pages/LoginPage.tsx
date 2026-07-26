@@ -58,8 +58,8 @@ export default function LoginPage() {
           {status === 'loading' ? '입장 중…' : 'Touchline 입장'}
         </button>
 
-        <Link className="cd-login__back" to="/">
-          ← 포트폴리오(스카우트 리포트)로
+        <Link className="cd-login__back" to="/overview">
+          ← 포트폴리오(프로필)로
         </Link>
       </form>
     </div>
