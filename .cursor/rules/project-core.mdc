@@ -1,0 +1,24 @@
+---
+description: fm_portfolio 핵심 컨텍스트와 AI 작업 원칙
+alwaysApply: true
+---
+
+# Project Core
+
+- Stack: Vite + React 19 + TypeScript, React Router, Redux Toolkit(Club Desk), Axios, json-server
+- 이 프로젝트는 FM UI 감성의 **IT/커리어 포트폴리오**다. 카피·라벨·데이터 키는 축구 용어보다 IT 용어를 우선한다.
+- UI 문구는 한국어, 코드·파일·컴포넌트명은 영어.
+- 파일명과 default export 이름을 일치시킨다.  
+  예: `Experience.tsx` → `export default function Experience`
+- 관련 없는 리팩터·새 의존성·문서 추가를 하지 않는다. 요청 범위만 수정한다.
+- 비밀값(`.env`, 토큰)을 커밋하거나 예시로 하드코딩하지 않는다.
+---
+
+## 주요 경로
+
+- 포트폴리오 앱: `src/portfolio/PortfolioApp.tsx`
+- 섹션 컴포넌트: `src/components/`
+- 전역 스타일/토큰: `src/styles/global.css`
+- 테마: `src/theme/`
+- 데이터: `public/data/portfolio.json`, `src/types/portfolio.ts`
+- Club Desk 데모: `src/club-desk/`
