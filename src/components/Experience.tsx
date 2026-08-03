@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { CareerPeriod, SkillKey, SkillLabel } from '../types/portfolio'
 import SkillBars from './SkillBars'
+import { playHudClick } from '../theme/hudAudio'
 
 interface ExperienceProps {
   experience: CareerPeriod[]
@@ -32,8 +33,12 @@ export default function Experience({ experience, skillLabels }: ExperienceProps)
               key={period.id}
               type="button"
               role="tab"
+              className="hud-interactive"
               aria-selected={period.id === active.id}
-              onClick={() => setActiveId(period.id)}
+              onClick={() => {
+                playHudClick('select')
+                setActiveId(period.id)
+              }}
             >
               <span className="season-list__label">{period.label}</span>
               <span className="season-list__role">{period.role}</span>
@@ -41,7 +46,11 @@ export default function Experience({ experience, skillLabels }: ExperienceProps)
           ))}
         </div>
 
-        <article className="season-detail" role="tabpanel">
+        <article
+          key={active.id}
+          className="season-detail hud-frame hud-redeploy"
+          role="tabpanel"
+        >
           <div className="season-detail__meta">
             <span>{active.range}</span>
             <span>·</span>

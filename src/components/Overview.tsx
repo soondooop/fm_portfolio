@@ -47,7 +47,7 @@ export default function Overview({ profile }: OverviewProps) {
         </div>
       </div>
 
-      <aside className="player-card" aria-label="프로필 카드">
+      <aside className="player-card hud-frame hud-interactive" aria-label="프로필 카드">
         <div className="player-card__head">
           <div className="player-card__top">
             <div>

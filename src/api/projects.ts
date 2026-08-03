@@ -51,7 +51,9 @@ export function mapRemoteProject(
     featured: false,
     role: inferRole(tags),
     competition: inferCompetition(tags),
-    contribution: [],
+    contribution: Array.isArray(project.contribution)
+      ? project.contribution
+      : [],
   }
 }
 

@@ -75,7 +75,7 @@ export default function Contact({ contact }: ContactProps) {
         </div>
       </div>
 
-      <form className="transfer__form form-grid" onSubmit={onSubmit}>
+      <form className="transfer__form form-grid hud-frame" onSubmit={onSubmit}>
         <p className="eyebrow" style={{ margin: 0 }}>
           Send Inquiry
         </p>

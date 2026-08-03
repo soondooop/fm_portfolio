@@ -59,61 +59,63 @@ export default function ProjectsModal({ match, onClose }: ProjectsModalProps) {
           </button>
         </div>
 
-        {match.image ? (
-          <div className="modal__image">
-            <img src={match.image} alt="" />
+        <div className="modal__body">
+          {match.image ? (
+            <div className="modal__image">
+              <img src={match.image} alt="" />
+            </div>
+          ) : null}
+
+          <div className="modal__meta">
+            <span className="chip">
+              Role <strong>{match.role || 'Publisher'}</strong>
+            </span>
           </div>
-        ) : null}
 
-        <div className="modal__meta">
-          <span className="chip">
-            Role <strong>{match.role || 'Publisher'}</strong>
-          </span>
-        </div>
+          <p>{match.summary}</p>
 
-        <p>{match.summary}</p>
-
-        {stack.length ? (
-          <div className="stack-list" aria-label="사용 스택">
-            {stack.map((tech) => (
-              <span className="chip" key={tech}>
-                {tech}
-              </span>
-            ))}
-          </div>
-        ) : null}
-
-        {contribution.length ? (
-          <>
-            <p className="eyebrow">What I did</p>
-            <ul>
-              {contribution.map((item) => (
-                <li key={item}>{item}</li>
+          {stack.length ? (
+            <div className="stack-list" aria-label="사용 스택">
+              {stack.map((tech) => (
+                <span className="chip" key={tech}>
+                  {tech}
+                </span>
               ))}
-            </ul>
-          </>
-        ) : null}
+            </div>
+          ) : null}
 
-        {match.link ? (
-          match.link.startsWith('/') ? (
-            <Link className="btn btn--primary" to={match.link} onClick={onClose}>
-              프로젝트 열기
-            </Link>
+          {contribution.length ? (
+            <>
+              <p className="eyebrow">What I did</p>
+              <ul>
+                {contribution.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </>
+          ) : null}
+
+          {match.link ? (
+            match.link.startsWith('/') ? (
+              <Link className="btn btn--primary" to={match.link} onClick={onClose}>
+                프로젝트 열기
+              </Link>
+            ) : (
+              <a
+                className="btn btn--primary"
+                href={match.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                사이트 보기
+              </a>
+            )
           ) : (
-            <a
-              className="btn btn--primary"
-              href={match.link}
-              target="_blank"
-              rel="noreferrer"
-            >
-              사이트 보기
-            </a>
-          )
-        ) : (
-          <p style={{ marginBottom: 0, fontSize: '0.9rem' }}>
-            외부 링크가 아직 없습니다.
-          </p>
-        )}
+            <p style={{ marginBottom: 0, fontSize: '0.9rem' }}>
+              외부 링크가 아직 없습니다.
+            </p>
+          )}
+        </div>
       </div>
     </div>,
     document.body,

@@ -1,4 +1,5 @@
 import type { SkillScores, SkillKey, SkillLabel } from '../types/portfolio'
+import CountUp from './CountUp'
 
 const SKILL_ORDER: SkillKey[] = [
   'craft',
@@ -23,7 +24,7 @@ export default function SkillBars({
 }: SkillBarsProps) {
   return (
     <div className="stat-bars" key={animateKey}>
-      {SKILL_ORDER.map((key) => {
+      {SKILL_ORDER.map((key, index) => {
         const meta = labels[key]
         const value = skills[key] ?? 0
         return (
@@ -35,10 +36,17 @@ export default function SkillBars({
             <div className="stat-row__track" aria-hidden="true">
               <div
                 className="stat-row__fill"
-                style={{ width: `${value}%` }}
+                style={{
+                  width: `${value}%`,
+                  animationDelay: `${index * 0.04}s`,
+                }}
               />
             </div>
-            <div className="stat-row__value">{value}</div>
+            <CountUp
+              className="stat-row__value"
+              value={value}
+              delayMs={index * 40}
+            />
           </div>
         )
       })}

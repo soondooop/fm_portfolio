@@ -1,4 +1,6 @@
+import { useId } from 'react'
 import type { AttributesData } from '../types/portfolio'
+import CountUp from './CountUp'
 
 interface SkillsetGroup {
   key: keyof AttributesData
@@ -19,6 +21,8 @@ interface SkillsetProps {
 }
 
 export default function Skillset({ attributes }: SkillsetProps) {
+  const mountKey = useId()
+
   return (
     <section className="panel" aria-labelledby="attributes-title">
       <div className="section-head">
@@ -31,12 +35,12 @@ export default function Skillset({ attributes }: SkillsetProps) {
         </div>
       </div>
 
-      <div className="attr-grid">
+      <div className="attr-grid" key={mountKey}>
         {GROUPS.map((group) => (
-          <div className="attr-group" key={group.key}>
+          <div className="attr-group hud-frame hud-interactive" key={group.key}>
             <h3>{group.title}</h3>
             {(attributes[group.key] || []).map((item, index) => (
-              <div className="stat-row" key={item.key}>
+              <div className="stat-row" key={`${mountKey}-${item.key}`}>
                 <div className="stat-row__label">
                   {item.label}
                   {item.note ? (
@@ -52,7 +56,11 @@ export default function Skillset({ attributes }: SkillsetProps) {
                     }}
                   />
                 </div>
-                <div className="stat-row__value">{item.value}</div>
+                <CountUp
+                  className="stat-row__value"
+                  value={item.value}
+                  delayMs={index * 50}
+                />
               </div>
             ))}
           </div>

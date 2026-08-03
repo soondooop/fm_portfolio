@@ -1,5 +1,11 @@
 import client from './client'
 import type { InboxQuery, Offer, OfferStatus, PaginatedResult } from '../../types/clubDesk'
+import {
+  isStaticClubDesk,
+  mockBulkRespondOffers,
+  mockFetchOffers,
+  mockRespondOffer,
+} from './mockStore'
 
 interface RawListPayload<T> {
   data?: T[]
@@ -28,12 +34,12 @@ interface FetchOffersParams {
   type?: string
 }
 
-export async function fetchOffers({
-  page = 1,
-  limit = 8,
-  status = '',
-  type = '',
-}: Partial<InboxQuery> = {}): Promise<PaginatedResult<Offer>> {
+export async function fetchOffers(
+  query: Partial<InboxQuery> = {},
+): Promise<PaginatedResult<Offer>> {
+  if (isStaticClubDesk) return mockFetchOffers(query)
+
+  const { page = 1, limit = 8, status = '', type = '' } = query
   const params: FetchOffersParams = {
     _page: page,
     _per_page: limit,
@@ -48,6 +54,7 @@ export async function fetchOffers({
 }
 
 export async function respondOffer(id: Offer['id'], status: OfferStatus): Promise<Offer> {
+  if (isStaticClubDesk) return mockRespondOffer(id, status)
   const { data } = await client.patch<Offer>(`/offers/${id}`, { status })
   return data
 }
@@ -56,5 +63,6 @@ export async function bulkRespondOffers(
   ids: Array<Offer['id']>,
   status: OfferStatus,
 ): Promise<void> {
+  if (isStaticClubDesk) return mockBulkRespondOffers(ids, status)
   await Promise.all(ids.map((id) => client.patch(`/offers/${id}`, { status })))
 }

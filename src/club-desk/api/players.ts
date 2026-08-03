@@ -1,5 +1,13 @@
 import client from './client'
 import type { PaginatedResult, PlayerInput, SquadPlayer, SquadQuery } from '../../types/clubDesk'
+import {
+  isStaticClubDesk,
+  mockCreatePlayer,
+  mockDeletePlayer,
+  mockDeletePlayers,
+  mockFetchPlayers,
+  mockUpdatePlayer,
+} from './mockStore'
 
 interface RawListPayload<T> {
   data?: T[]
@@ -28,13 +36,12 @@ interface FetchPlayersParams {
   _per_page?: number
 }
 
-export async function fetchPlayers({
-  page = 1,
-  limit = 8,
-  q = '',
-  position = '',
-  status = '',
-}: Partial<SquadQuery> = {}): Promise<PaginatedResult<SquadPlayer>> {
+export async function fetchPlayers(
+  query: Partial<SquadQuery> = {},
+): Promise<PaginatedResult<SquadPlayer>> {
+  if (isStaticClubDesk) return mockFetchPlayers(query)
+
+  const { page = 1, limit = 8, q = '', position = '', status = '' } = query
   const params: FetchPlayersParams = {
     _sort: 'number',
     _order: 'asc',
@@ -44,7 +51,6 @@ export async function fetchPlayers({
   if (status) params.status = status
 
   if (q.trim()) {
-    // 검색 시 넉넉히 가져온 뒤 클라이언트 필터 + 페이지 슬라이스
     params._page = 1
     params._per_page = 100
   } else {
@@ -52,7 +58,9 @@ export async function fetchPlayers({
     params._per_page = limit
   }
 
-  const { data } = await client.get<SquadPlayer[] | RawListPayload<SquadPlayer>>('/players', { params })
+  const { data } = await client.get<SquadPlayer[] | RawListPayload<SquadPlayer>>('/players', {
+    params,
+  })
   let { list, total } = normalizeList(data)
 
   if (q.trim()) {
@@ -67,6 +75,7 @@ export async function fetchPlayers({
 }
 
 export async function createPlayer(payload: PlayerInput): Promise<SquadPlayer> {
+  if (isStaticClubDesk) return mockCreatePlayer(payload)
   const { data } = await client.post<SquadPlayer>('/players', payload)
   return data
 }
@@ -75,14 +84,17 @@ export async function updatePlayer(
   id: SquadPlayer['id'],
   payload: PlayerInput,
 ): Promise<SquadPlayer> {
+  if (isStaticClubDesk) return mockUpdatePlayer(id, payload)
   const { data } = await client.put<SquadPlayer>(`/players/${id}`, payload)
   return data
 }
 
 export async function deletePlayer(id: SquadPlayer['id']): Promise<void> {
+  if (isStaticClubDesk) return mockDeletePlayer(id)
   await client.delete(`/players/${id}`)
 }
 
 export async function deletePlayers(ids: Array<SquadPlayer['id']>): Promise<void> {
+  if (isStaticClubDesk) return mockDeletePlayers(ids)
   await Promise.all(ids.map((id) => client.delete(`/players/${id}`)))
 }

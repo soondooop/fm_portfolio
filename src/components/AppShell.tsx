@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import type { ReactNode } from 'react'
 import ThemeToggle from '../theme/ThemeToggle'
 import { PORTFOLIO_ROUTES } from '../types/routes'
+import { playHudClick } from '../theme/hudAudio'
 
 interface AppShellProps {
   children: ReactNode
@@ -10,6 +11,7 @@ interface AppShellProps {
 
 export default function AppShell({ children }: AppShellProps) {
   const [open, setOpen] = useState(false)
+  const location = useLocation()
 
   return (
     <div className="shell">
@@ -21,9 +23,12 @@ export default function AppShell({ children }: AppShellProps) {
           </div>
           <button
             type="button"
-            className="mobile-nav-toggle"
+            className="mobile-nav-toggle hud-interactive"
             aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => {
+              playHudClick('select')
+              setOpen((v) => !v)
+            }}
           >
             Menu
           </button>
@@ -35,8 +40,13 @@ export default function AppShell({ children }: AppShellProps) {
               <NavLink
                 to={item.path}
                 end
-                className={({ isActive }) => (isActive ? 'active' : undefined)}
-                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  isActive ? 'active hud-interactive' : 'hud-interactive'
+                }
+                onClick={() => {
+                  playHudClick('nav')
+                  setOpen(false)
+                }}
               >
                 <span className="nav-list__index">{item.index}</span>
                 <span>{item.label}</span>
@@ -55,7 +65,9 @@ export default function AppShell({ children }: AppShellProps) {
         </div>
       </aside>
 
-      <main className="shell__main">{children}</main>
+      <main key={location.pathname} className="shell__main">
+        {children}
+      </main>
     </div>
   )
 }

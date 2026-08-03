@@ -5,6 +5,7 @@ export interface RemoteProject {
   image?: string | null
   tags?: string[]
   link?: string | null
+  contribution?: string[]
 }
 
 export interface MatchItem {

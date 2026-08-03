@@ -2,6 +2,7 @@ import { NavLink, Navigate, Outlet, Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { logout } from '../features/auth/authSlice'
 import Toast from '../components/Toast'
+import { isStaticClubDesk } from '../api/mockStore'
 
 export default function DeskLayout() {
   const dispatch = useAppDispatch()
@@ -40,6 +41,11 @@ export default function DeskLayout() {
       </aside>
 
       <main className="cd-shell__main">
+        {isStaticClubDesk ? (
+          <p className="cd-static-banner" role="status">
+            정적 데모 모드 · 데이터는 브라우저 메모리에서만 동작하며 새로고침 시 초기화됩니다.
+          </p>
+        ) : null}
         <Outlet />
       </main>
       <Toast />

@@ -2,6 +2,7 @@
 import type { ChangeEvent, KeyboardEvent } from 'react'
 import type { MatchItem } from '../types/projects'
 import ProjectsModal from './ProjectsModal'
+import { playHudClick } from '../theme/hudAudio'
 
 const PAGE_SIZE = 5
 
@@ -98,7 +99,7 @@ export default function ProjectsList({
       {loading ? <p className="cd-state">Loading projects…</p> : null}
       {error ? <p className="cd-error">{error}</p> : null}
 
-      <div className="match-table-wrap">
+      <div className="match-table-wrap hud-frame">
         <table className="match-table">
           <thead>
             <tr>
@@ -113,10 +114,15 @@ export default function ProjectsList({
               visible.map((match) => (
                 <tr
                   key={match.key}
-                  onClick={() => setSelected(match)}
+                  className="hud-interactive"
+                  onClick={() => {
+                    playHudClick('select')
+                    setSelected(match)
+                  }}
                   onKeyDown={(e: KeyboardEvent<HTMLTableRowElement>) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
+                      playHudClick('select')
                       setSelected(match)
                     }
                   }}

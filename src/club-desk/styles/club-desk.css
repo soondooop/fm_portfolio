@@ -11,6 +11,7 @@
 .cd-back-link { color: var(--cd-muted); font-size: 0.85rem; text-decoration: none; }
 .cd-back-link:hover { color: var(--cd-accent); }
 .cd-shell__main { padding: 1.5rem clamp(1rem, 2.5vw, 2rem) 2.5rem; }
+.cd-static-banner { margin: 0 0 1rem; padding: 0.7rem 0.9rem; border-radius: 12px; border: 1px solid color-mix(in srgb, var(--cd-warn) 45%, transparent); background: color-mix(in srgb, var(--cd-warn) 12%, transparent); color: var(--cd-text); font-size: 0.88rem; line-height: 1.45; }
 .cd-page__head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
 .cd-page__head h2 { margin: 0.2rem 0; font-family: 'Archivo Narrow', sans-serif; font-size: clamp(1.8rem, 3vw, 2.3rem); }
 .cd-page__head p { margin: 0; color: var(--cd-muted); }
