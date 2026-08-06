@@ -53,6 +53,32 @@ export default function AppShell({ children }: AppShellProps) {
               </NavLink>
             </li>
           ))}
+          <li>
+            <NavLink
+              to="/museum"
+              className="hud-interactive"
+              onClick={() => {
+                playHudClick('nav')
+                setOpen(false)
+              }}
+            >
+              <span className="nav-list__index">◇</span>
+              <span>Museum 3D</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/play"
+              className="hud-interactive"
+              onClick={() => {
+                playHudClick('nav')
+                setOpen(false)
+              }}
+            >
+              <span className="nav-list__index">▶</span>
+              <span>Play World</span>
+            </NavLink>
+          </li>
         </ul>
 
         <div className="shell__nav-bottom">

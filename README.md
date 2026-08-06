@@ -8,6 +8,7 @@ Football Manager식 UI를 바탕으로, IT·커리어 톤의 포트폴리오와 
 
 - React 19 + TypeScript + Vite
 - React Router
+- Phaser 3 (Play World)
 - Redux Toolkit + Axios (Club Desk)
 - json-server (로컬 Mock API)
 - GitHub Pages (배포)
@@ -20,6 +21,11 @@ Football Manager식 UI를 바탕으로, IT·커리어 톤의 포트폴리오와 
 - 부트 로더, 프로젝트 리스트·모달
 - 프로필·경력·스킬: 원격 `portfolio.json`
 - 프로젝트 목록: 원격 `projects.json`
+
+### Play World (`/play`)
+- React + Phaser 도트 RPG형 탐험 맵
+- Overview / Experience / Skills / Projects / Contact 존 상호작용
+- Skip to classic, 모바일 가상 패드
 
 ### Club Desk (`/club-desk`)
 - 데모 로그인
@@ -36,6 +42,7 @@ npm run dev
 | 구분 | URL |
 |------|-----|
 | Portfolio | http://localhost:5173 |
+| Play World | http://localhost:5173/play |
 | Club Desk | http://localhost:5173/club-desk |
 | Mock API | http://localhost:3001 |
 

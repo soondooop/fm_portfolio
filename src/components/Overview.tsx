@@ -35,14 +35,14 @@ export default function Overview({ profile }: OverviewProps) {
         </div>
 
         <div className="hero__actions">
-          <Link className="btn btn--primary" to="/contact">
+          <Link className="btn btn--primary" to="/play">
+            Play World
+          </Link>
+          <Link className="btn btn--ghost" to="/contact">
             제안하기
           </Link>
           <Link className="btn btn--ghost" to="/projects">
             프로젝트 보기
-          </Link>
-          <Link className="btn btn--ghost" to="/experience">
-            경력 역량
           </Link>
         </div>
       </div>
