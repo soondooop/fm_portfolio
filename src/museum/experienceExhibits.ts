@@ -215,42 +215,6 @@ function paintCareerBoard(
   })
 }
 
-function makeTextPlane(
-  lines: { text: string; size: number; color: string; weight?: string }[],
-  w: number,
-  h: number,
-  bg = '#1a1c20',
-): THREE.Mesh {
-  const cw = 768
-  const ch = Math.round(cw * (h / w))
-  const canvas = document.createElement('canvas')
-  canvas.width = cw
-  canvas.height = ch
-  const ctx = canvas.getContext('2d')!
-  ctx.fillStyle = bg
-  ctx.fillRect(0, 0, cw, ch)
-  ctx.strokeStyle = 'rgba(255,255,255,0.12)'
-  ctx.lineWidth = 4
-  ctx.strokeRect(16, 16, cw - 32, ch - 32)
-
-  let y = ch * 0.28
-  ctx.textAlign = 'center'
-  ctx.textBaseline = 'middle'
-  for (const line of lines) {
-    ctx.fillStyle = line.color
-    ctx.font = `${line.weight ?? '600'} ${line.size}px ${
-      line.size >= 48 ? 'Fraunces, Georgia, serif' : 'DM Sans, Segoe UI, sans-serif'
-    }`
-    ctx.fillText(line.text, cw / 2, y)
-    y += line.size * 1.35
-  }
-
-  const tex = new THREE.CanvasTexture(canvas)
-  tex.colorSpace = THREE.SRGBColorSpace
-  const mat = new THREE.MeshBasicMaterial({ map: tex })
-  return new THREE.Mesh(new THREE.PlaneGeometry(w, h), mat)
-}
-
 function makeAccentMural(
   title: string,
   subtitle: string,

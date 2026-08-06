@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js'
-import type { ContactData, ContactLink } from '../types/portfolio'
+import type { ContactData } from '../types/portfolio'
 import {
   CONTACT_DESK,
   CONTACT_GALLERY,
@@ -419,7 +419,7 @@ export function createContactExhibits(
 function lookHitY(
   eyeX: number,
   eyeY: number,
-  eyeZ: number,
+  _eyeZ: number,
   yaw: number,
   pitch: number,
   planeX: number,

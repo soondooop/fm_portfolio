@@ -71,10 +71,7 @@ export function createOverviewBillboard(profile: Profile): OverviewAnim {
   const canvas = document.createElement('canvas')
   canvas.width = CANVAS_W
   canvas.height = CANVAS_H
-  const ctx = canvas.getContext('2d')
-  if (!ctx) {
-    return { group, update: () => undefined, dispose: () => undefined }
-  }
+  const ctx = canvas.getContext('2d')!
 
   const tex = new THREE.CanvasTexture(canvas)
   tex.colorSpace = THREE.SRGBColorSpace
