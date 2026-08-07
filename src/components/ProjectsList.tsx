@@ -128,7 +128,7 @@ export default function ProjectsList({
                   }}
                   tabIndex={0}
                 >
-                  <td>
+                  <td className="match-col-project">
                     <div className="match-cell">
                       <div className="match-thumb" aria-hidden="true">
                         {match.image ? (
@@ -142,12 +142,31 @@ export default function ProjectsList({
                           <strong>{match.title}</strong>
                         </div>
                         <p className="match-title__summary">{match.summary}</p>
+                        <p className="match-meta match-only-mobile">
+                          <span>{match.role}</span>
+                          <span className="match-meta__sep" aria-hidden="true">
+                            |
+                          </span>
+                          <span>{match.competition}</span>
+                        </p>
+                        <div className="stack-list stack-list--compact match-only-mobile">
+                          {(match.stack || []).slice(0, 4).map((tech) => (
+                            <span className="chip" key={`m-${tech}`}>
+                              {tech}
+                            </span>
+                          ))}
+                          {(match.stack || []).length > 4 ? (
+                            <span className="chip">
+                              +{(match.stack || []).length - 4}
+                            </span>
+                          ) : null}
+                        </div>
                       </div>
                     </div>
                   </td>
-                  <td>{match.role}</td>
-                  <td>{match.competition}</td>
-                  <td>
+                  <td className="match-col-role">{match.role}</td>
+                  <td className="match-col-type">{match.competition}</td>
+                  <td className="match-col-stack">
                     <div className="stack-list stack-list--compact">
                       {(match.stack || []).slice(0, 3).map((tech) => (
                         <span className="chip" key={tech}>

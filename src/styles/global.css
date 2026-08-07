@@ -227,6 +227,9 @@ button { cursor: pointer; border: 0; background: none; }
 .match-title__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
 .match-title__head strong { font-size: 1rem; min-width: 0; }
 .match-title__summary { margin: 0; color: var(--muted); font-size: 0.82rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.match-meta { margin: 0; color: var(--muted); font-size: 0.85rem; line-height: 1.4; }
+.match-meta__sep { margin: 0 0.35rem; opacity: 0.55; }
+.match-only-mobile { display: none; }
 .rating { font-family: var(--font-display); font-size: 1.2rem; color: var(--rating); }
 .featured-flag { flex-shrink: 0; margin-top: 0.1rem; padding: 0.1rem 0.45rem; border-radius: 999px; background: rgba(110, 176, 255, 0.16); color: var(--accent); font-size: 0.7rem; font-weight: 700; line-height: 1.2; white-space: nowrap; }
 .transfer { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 1.25rem; }
@@ -279,15 +282,14 @@ button { cursor: pointer; border: 0; background: none; }
   .hero { min-height: auto; }
   .player-card { min-height: 320px; }
 
-  /* Project list: stack as cards — no page-level horizontal scroll */
+  /* Project list cards: thumbnail → title → summary → Role | Type → tags */
   .match-table-wrap { overflow: visible; }
   .match-table { min-width: 0; display: block; }
   .match-table thead { display: none; }
   .match-table tbody { display: grid; gap: 0; }
   .match-table tr {
-    display: grid;
-    gap: 0.45rem;
-    padding: 0.9rem;
+    display: block;
+    padding: 0.95rem;
     border-bottom: 1px solid var(--line);
   }
   .match-table tbody tr:last-child { border-bottom: 0; }
@@ -299,14 +301,34 @@ button { cursor: pointer; border: 0; background: none; }
     border: 0;
     box-sizing: border-box;
   }
-  .match-table td:nth-child(2),
-  .match-table td:nth-child(3) {
-    color: var(--muted);
-    font-size: 0.85rem;
+  .match-col-role,
+  .match-col-type,
+  .match-col-stack { display: none !important; }
+  .match-only-mobile { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; }
+  .match-meta.match-only-mobile { display: block; margin-top: 0.15rem; }
+  .match-cell {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    width: 100%;
+    align-items: stretch;
   }
-  .match-table td:nth-child(2)::before { content: 'Role · '; }
-  .match-table td:nth-child(3)::before { content: 'Type · '; }
-  .match-cell { width: 100%; }
+  .match-thumb {
+    flex: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  .match-title { gap: 0.4rem; }
+  .match-title__head strong {
+    display: block;
+    font-size: 1.02rem;
+    line-height: 1.35;
+    word-break: keep-all;
+  }
+  .match-title__summary {
+    -webkit-line-clamp: 3;
+  }
   .filters { width: 100%; }
   .filters label { flex: 1 1 100%; min-width: 0; }
   .filters select { width: 100%; max-width: 100%; }
@@ -314,7 +336,6 @@ button { cursor: pointer; border: 0; background: none; }
 @media (max-width: 640px) {
   .stat-row__head { gap: 0.5rem; }
   .player-card__stats { grid-template-columns: 1fr; }
-  .match-thumb { flex: 0 0 64px; width: 64px; height: 44px; }
 }
 .theme-dock { position: relative; width: 100%; height: 44px; z-index: 40; }
 .theme-dock__trigger { position: relative; z-index: 2; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--panel); color: var(--text); display: grid; place-items: center; box-shadow: var(--shadow); transition: border-color 0.2s ease, transform 0.2s ease; }
