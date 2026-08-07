@@ -188,26 +188,36 @@ function paintCareerBoard(
   ctx.fillText('STATS', rightX, pad + 18)
 
   const scores: SkillScores = period.skills
-  const rowH = 92
+  const rowH = 102
   const barH = 14
-  const trackW = rightW - 56
+  const trackW = rightW - 8
   SKILL_ORDER.forEach((key, i) => {
     const y = pad + 56 + i * rowH
-    const name = skillLabels?.[key]?.name ?? key
+    const meta = skillLabels?.[key]
+    const name = meta?.name ?? key
+    const desc = meta?.desc ?? ''
     const value = scores[key] ?? 0
 
+    // Title left + score on the title’s right
     ctx.fillStyle = 'rgba(255,255,255,0.88)'
     ctx.font = '600 24px DM Sans, Segoe UI, sans-serif'
     ctx.textAlign = 'left'
     ctx.textBaseline = 'middle'
     ctx.fillText(name, rightX, y)
 
-    ctx.fillStyle = 'rgba(255,255,255,0.55)'
-    ctx.font = '700 22px DM Sans, Segoe UI, sans-serif'
+    ctx.fillStyle = 'rgba(255,255,255,0.88)'
+    ctx.font = '700 24px DM Sans, Segoe UI, sans-serif'
     ctx.textAlign = 'right'
     ctx.fillText(String(value), rightX + rightW, y)
 
-    const barY = y + 28
+    if (desc) {
+      ctx.fillStyle = 'rgba(255,255,255,0.45)'
+      ctx.font = '500 16px DM Sans, Segoe UI, sans-serif'
+      ctx.textAlign = 'left'
+      ctx.fillText(desc, rightX, y + 22)
+    }
+
+    const barY = y + (desc ? 40 : 28)
     ctx.fillStyle = 'rgba(255,255,255,0.12)'
     ctx.fillRect(rightX, barY, trackW, barH)
     ctx.fillStyle = accent

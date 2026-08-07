@@ -29,9 +29,16 @@ export default function SkillBars({
         const value = skills[key] ?? 0
         return (
           <div className="stat-row" key={key}>
-            <div className="stat-row__label">
-              {meta?.name ?? key}
-              {meta?.desc ? <small>{meta.desc}</small> : null}
+            <div className="stat-row__head">
+              <div className="stat-row__label">
+                {meta?.name ?? key}
+                {meta?.desc ? <small>{meta.desc}</small> : null}
+              </div>
+              <CountUp
+                className="stat-row__value"
+                value={value}
+                delayMs={index * 40}
+              />
             </div>
             <div className="stat-row__track" aria-hidden="true">
               <div
@@ -42,11 +49,6 @@ export default function SkillBars({
                 }}
               />
             </div>
-            <CountUp
-              className="stat-row__value"
-              value={value}
-              delayMs={index * 40}
-            />
           </div>
         )
       })}

@@ -41,11 +41,18 @@ export default function Skillset({ attributes }: SkillsetProps) {
             <h3>{group.title}</h3>
             {(attributes[group.key] || []).map((item, index) => (
               <div className="stat-row" key={`${mountKey}-${item.key}`}>
-                <div className="stat-row__label">
-                  {item.label}
-                  {item.note ? (
-                    <span className="note-tag">{item.note}</span>
-                  ) : null}
+                <div className="stat-row__head">
+                  <div className="stat-row__label">
+                    {item.label}
+                    {item.note ? (
+                      <span className="note-tag">{item.note}</span>
+                    ) : null}
+                  </div>
+                  <CountUp
+                    className="stat-row__value"
+                    value={item.value}
+                    delayMs={index * 50}
+                  />
                 </div>
                 <div className="stat-row__track" aria-hidden="true">
                   <div
@@ -56,11 +63,6 @@ export default function Skillset({ attributes }: SkillsetProps) {
                     }}
                   />
                 </div>
-                <CountUp
-                  className="stat-row__value"
-                  value={item.value}
-                  delayMs={index * 50}
-                />
               </div>
             ))}
           </div>

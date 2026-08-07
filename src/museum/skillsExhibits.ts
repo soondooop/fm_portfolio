@@ -20,13 +20,12 @@ const PANEL_PITCH = PANEL_W + 1.5 * PROP_SCALE
 
 const CANVAS_W = 768
 const CANVAS_H = 640
-/** Bar track fills most of the panel; value sits just after it */
 const PAD_L = 48
 const PAD_R = 36
-const VALUE_W = 44
+const VALUE_W = 48
 const TRACK_X = PAD_L
-const TRACK_W = CANVAS_W - PAD_L - PAD_R - VALUE_W - 12
-const VALUE_X = TRACK_X + TRACK_W + 12
+const TRACK_W = CANVAS_W - PAD_L - PAD_R
+const VALUE_X = CANVAS_W - PAD_R
 
 interface SkillPanelAnim {
   title: string
@@ -77,19 +76,14 @@ function drawSkillBars(
     const barY = rowTop + 38
     const barH = 12
 
+    // Title left + score on the title’s right
     ctx.fillStyle = 'rgba(255,255,255,0.88)'
     ctx.font = '600 26px DM Sans, Segoe UI, sans-serif'
     ctx.textAlign = 'left'
     ctx.textBaseline = 'middle'
     let label = item.label
-    const noteGap = 12
     const noteText = item.note?.trim() || ''
-    ctx.font = noteText
-      ? '500 16px DM Sans, Segoe UI, sans-serif'
-      : ctx.font
-    const noteW = noteText ? ctx.measureText(noteText).width + noteGap : 0
-    ctx.font = '600 26px DM Sans, Segoe UI, sans-serif'
-    const maxLabel = TRACK_W + VALUE_W - noteW
+    const maxLabel = TRACK_W - VALUE_W - 16
     if (ctx.measureText(label).width > maxLabel) {
       while (label.length > 1 && ctx.measureText(`${label}…`).width > maxLabel) {
         label = label.slice(0, -1)
@@ -102,20 +96,20 @@ function drawSkillBars(
     if (noteText) {
       ctx.fillStyle = 'rgba(255,255,255,0.45)'
       ctx.font = '500 16px DM Sans, Segoe UI, sans-serif'
-      ctx.fillText(noteText, PAD_L + labelW + noteGap, labelY)
+      ctx.fillText(noteText, PAD_L + labelW + 12, labelY)
     }
+
+    ctx.fillStyle = 'rgba(255,244,230,0.92)'
+    ctx.font = '700 24px DM Sans, Segoe UI, sans-serif'
+    ctx.textAlign = 'right'
+    ctx.textBaseline = 'middle'
+    ctx.fillText(String(item.value), VALUE_X, labelY)
 
     ctx.fillStyle = 'rgba(255,255,255,0.12)'
     ctx.fillRect(TRACK_X, barY, TRACK_W, barH)
     const fillW = Math.max(4, (Math.min(100, item.value) / 100) * TRACK_W)
     ctx.fillStyle = accent
     ctx.fillRect(TRACK_X, barY, fillW, barH)
-
-    ctx.fillStyle = 'rgba(255,244,230,0.92)'
-    ctx.font = '700 22px DM Sans, Segoe UI, sans-serif'
-    ctx.textAlign = 'left'
-    ctx.textBaseline = 'middle'
-    ctx.fillText(String(item.value), VALUE_X, barY + barH / 2)
   })
 }
 
