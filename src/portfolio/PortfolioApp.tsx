@@ -100,7 +100,7 @@ export default function PortfolioApp() {
 
       {data ? (
         <div className={`boot-content ${bootDone ? 'is-visible' : ''}`}>
-          <AppShell>
+          <AppShell profile={data.profile}>
             <Routes>
               <Route index element={<Navigate to="overview" replace />} />
               <Route

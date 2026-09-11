@@ -11,7 +11,7 @@ export default function Overview({ profile }: OverviewProps) {
   return (
     <section className="panel hero" aria-labelledby="overview-title">
       <div className="hero__copy">
-        <p className="eyebrow">Talent Profile · Open to Work</p>
+        <p className="eyebrow">Talent Profile</p>
         <div className="hero__jersey" aria-hidden="true">
           #{profile.id}
         </div>

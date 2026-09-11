@@ -3,12 +3,14 @@ import { NavLink } from 'react-router-dom'
 import type { ReactNode } from 'react'
 import ThemeToggle from '../theme/ThemeToggle'
 import { PORTFOLIO_ROUTES } from '../types/routes'
+import type { Profile } from '../types/portfolio'
 
 interface AppShellProps {
   children: ReactNode
+  profile?: Profile
 }
 
-export default function AppShell({ children }: AppShellProps) {
+export default function AppShell({ children, profile }: AppShellProps) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -47,11 +49,13 @@ export default function AppShell({ children }: AppShellProps) {
 
         <div className="shell__nav-bottom">
           <ThemeToggle />
-          <div className="shell__nav-foot">
-            9 years · Publisher / Frontend
-            <br />
-            Open to work
-          </div>
+          {profile ? (
+            <div className="shell__nav-foot">
+              {profile.years} years · {profile.position}
+              <br />
+              {profile.status}
+            </div>
+          ) : null}
         </div>
       </aside>
 

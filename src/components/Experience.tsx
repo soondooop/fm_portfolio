@@ -22,6 +22,11 @@ export default function Experience({ experience, skillLabels }: ExperienceProps)
           <p>
             2017년 입문부터 현재까지, 역할 확장에 따라 역량변화를 한눈에 확인할 수 있습니다.
           </p>
+          <p className="skill-legend">
+            <small>
+              점수는 0–100 기준 자기 평가 숙련도입니다. 각 경력 구간의 실무 적용 수준을 반영했습니다.
+            </small>
+          </p>
         </div>
       </div>
 

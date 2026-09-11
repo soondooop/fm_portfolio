@@ -9,6 +9,16 @@
       content="Kim Seungdo — 웹 퍼블리셔 / 프론트엔드 포트폴리오"
     />
     <script>
+      // SPA routing support - restore path from 404.html redirect
+      (function () {
+        var redirect = sessionStorage.redirect
+        delete sessionStorage.redirect
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect)
+        }
+      })()
+    </script>
+    <script>
       (function () {
         try {
           var key = 'fm-portfolio-theme'
