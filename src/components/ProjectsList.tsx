@@ -106,6 +106,7 @@ export default function ProjectsList({
               <th>Role</th>
               <th>Type</th>
               <th>Stack</th>
+              <th>Link</th>
             </tr>
           </thead>
           <tbody>
@@ -148,18 +149,36 @@ export default function ProjectsList({
                           {tech}
                         </span>
                       ))}
-                      {(match.stack || []).length > 5 ? (
+                      {(match.stack || []).length > 3 ? (
                         <span className="chip">
-                          +{(match.stack || []).length - 5}
+                          +{(match.stack || []).length - 3}
                         </span>
                       ) : null}
                     </div>
+                  </td>
+                  <td>
+                    {match.link ? (
+                      <button
+                        type="button"
+                        className="btn btn--ghost btn--sm"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          setSelected(match)
+                        }}
+                      >
+                        상세보기
+                      </button>
+                    ) : (
+                      <span style={{ fontSize: '0.85rem', opacity: 0.6 }}>
+                        상세보기
+                      </span>
+                    )}
                   </td>
                 </tr>
               ))}
             {!loading && !error && filtered.length === 0 ? (
               <tr>
-                <td colSpan={4}>해당 조건의 프로젝트가 없습니다.</td>
+                <td colSpan={5}>해당 조건의 프로젝트가 없습니다.</td>
               </tr>
             ) : null}
           </tbody>

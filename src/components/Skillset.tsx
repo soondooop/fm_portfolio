@@ -28,6 +28,11 @@ export default function Skillset({ attributes }: SkillsetProps) {
           <p>
             디자인, 퍼블리싱부터 시작해 프론트엔드 개발까지 다양한 경험을 통해 성장하고 있습니다.
           </p>
+          <p className="skill-legend">
+            <small>
+              점수는 0–100 기준 자기 평가 숙련도입니다. 실무 적용 경험과 프로젝트 규모를 고려해 산정했습니다.
+            </small>
+          </p>
         </div>
       </div>
 
